@@ -125,6 +125,8 @@ const capabilityItems = [
 function TopNavWithDropdown() {
   const [active, setActive] = useState("Work");
   const [dropOpen, setDropOpen] = useState(false);
+  const [selectedCapability, setSelectedCapability] = useState<string | null>(null);
+  const [hoveredCapability, setHoveredCapability] = useState<string | null>(null);
   const dropRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -138,6 +140,7 @@ function TopNavWithDropdown() {
   }, []);
 
   const links = ["Work", "Capabilities", "About", "Insights"];
+  const capIsActive = active === "Capabilities" || selectedCapability !== null;
 
   return (
     <div style={{ border: "1px solid rgba(0,0,0,0.10)", borderRadius: 10, overflow: "visible" }}>
@@ -152,6 +155,7 @@ function TopNavWithDropdown() {
         <div style={{ display: "flex", alignItems: "center", gap: 24, marginLeft: 24 }}>
           {links.map((link) => {
             const isCapabilities = link === "Capabilities";
+            const isActive = isCapabilities ? (dropOpen || capIsActive) : active === link;
             return (
               <div key={link} ref={isCapabilities ? dropRef : undefined} style={{ position: "relative" }}>
                 <button
@@ -165,10 +169,10 @@ function TopNavWithDropdown() {
                   }}
                   style={{
                     display: "flex", alignItems: "center", gap: 4,
-                    fontFamily: F, fontSize: 14, fontWeight: 400,
-                    color: (isCapabilities ? dropOpen : active === link) ? "#1B1BFF" : "#5A5A6A",
+                    fontFamily: F, fontSize: 14, fontWeight: isActive ? 700 : 400,
+                    color: isActive ? "#1B1BFF" : "#5A5A6A",
                     background: "none", border: "none", cursor: "pointer",
-                    padding: "4px 0", transition: "color 180ms ease-out",
+                    padding: "4px 0", transition: "color 180ms ease-out, font-weight 180ms ease-out",
                   }}
                 >
                   {link}
@@ -194,23 +198,36 @@ function TopNavWithDropdown() {
                     boxShadow: "0 8px 24px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06)",
                     padding: 8, minWidth: 280, zIndex: 50,
                   }}>
-                    {capabilityItems.map((item) => (
-                      <button
-                        key={item.label}
-                        onClick={() => { setDropOpen(false); }}
-                        style={{
-                          display: "block", width: "100%", textAlign: "left",
-                          padding: "10px 14px", borderRadius: 7,
-                          background: "transparent", border: "none", cursor: "pointer",
-                          transition: "background 120ms ease-out",
-                        }}
-                        onMouseEnter={e => { e.currentTarget.style.background = "#F4F4F6"; }}
-                        onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
-                      >
-                        <p style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: "#0A0A0F", marginBottom: 2 }}>{item.label}</p>
-                        <p style={{ fontSize: 12, fontFamily: F, color: "#5A5A6A" }}>{item.desc}</p>
-                      </button>
-                    ))}
+                    {capabilityItems.map((item) => {
+                      const isSelected = selectedCapability === item.label;
+                      const isHovered = hoveredCapability === item.label;
+                      return (
+                        <button
+                          key={item.label}
+                          onClick={() => { setSelectedCapability(item.label); setActive("Capabilities"); setDropOpen(false); }}
+                          onMouseEnter={() => setHoveredCapability(item.label)}
+                          onMouseLeave={() => setHoveredCapability(null)}
+                          style={{
+                            display: "flex", alignItems: "center", justifyContent: "space-between",
+                            width: "100%", textAlign: "left",
+                            padding: "10px 14px", borderRadius: 7,
+                            background: isSelected ? "#EEEEFF" : isHovered ? "#F4F4F6" : "transparent",
+                            border: "none", cursor: "pointer",
+                            transition: "background 120ms ease-out",
+                          }}
+                        >
+                          <div>
+                            <p style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: isSelected ? "#1B1BFF" : "#0A0A0F", marginBottom: 2 }}>{item.label}</p>
+                            <p style={{ fontSize: 12, fontFamily: F, color: isSelected ? "#1B1BFF" : "#5A5A6A", opacity: isSelected ? 0.8 : 1 }}>{item.desc}</p>
+                          </div>
+                          {isSelected && (
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0, marginLeft: 12 }}>
+                              <path d="M2.5 7l3.5 3.5 5.5-7" stroke="#1B1BFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -443,6 +460,7 @@ function CollapsibleSidebar() {
 
 function SidebarNav() {
   const [active, setSideActive] = useState("active");
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
     <div style={{ display: "flex", height: 380, borderRadius: 10, border: "1px solid rgba(0,0,0,0.10)", overflow: "hidden" }}>
@@ -465,10 +483,13 @@ function SidebarNav() {
               </p>
               {section.items.map((item) => {
                 const isActive = active === item.id;
+                const isHovered = hovered === item.id && !isActive;
                 return (
                   <button
                     key={item.id}
                     onClick={() => setSideActive(item.id)}
+                    onMouseEnter={() => setHovered(item.id)}
+                    onMouseLeave={() => setHovered(null)}
                     style={{
                       display: "flex", alignItems: "center", gap: 9,
                       width: "100%", textAlign: "left",
@@ -476,23 +497,31 @@ function SidebarNav() {
                       border: "none", cursor: "pointer",
                       fontFamily: F, fontSize: 13,
                       fontWeight: isActive ? 700 : 400,
-                      color: isActive ? "#1B1BFF" : "#5A5A6A",
-                      background: isActive ? "#E8E8FF" : "transparent",
-                      transition: "background 150ms ease-out, color 150ms ease-out",
+                      color: isActive ? "#1B1BFF" : isHovered ? "#0A0A0F" : "#5A5A6A",
+                      background: isActive ? "#E8E8FF" : isHovered ? "#E2E2E6" : "transparent",
+                      transition: "background 120ms ease-out, color 120ms ease-out",
+                      position: "relative",
                     }}
-                    onMouseEnter={(e) => { if (!isActive) { e.currentTarget.style.background = "#EBEBEB"; e.currentTarget.style.color = "#0A0A0F"; } }}
-                    onMouseLeave={(e) => { if (!isActive) { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#5A5A6A"; } }}
                   >
-                    <span style={{ color: isActive ? "#1B1BFF" : "#BABAC4", flexShrink: 0 }}>
+                    {/* Selected indicator bar */}
+                    {isActive && (
+                      <span style={{
+                        position: "absolute", left: 0, top: "20%", bottom: "20%",
+                        width: 3, borderRadius: 9999,
+                        background: "#1B1BFF",
+                      }} />
+                    )}
+                    <span style={{ color: isActive ? "#1B1BFF" : isHovered ? "#5A5A6A" : "#BABAC4", flexShrink: 0 }}>
                       <NavIcon id={item.icon} />
                     </span>
                     <span style={{ flex: 1 }}>{item.label}</span>
                     {item.badge != null && (
                       <span style={{
                         fontSize: 10, fontFamily: F, fontWeight: 700,
-                        background: isActive ? "#1B1BFF" : "rgba(0,0,0,0.10)",
+                        background: isActive ? "#1B1BFF" : isHovered ? "rgba(0,0,0,0.14)" : "rgba(0,0,0,0.10)",
                         color: isActive ? "#FFFFFF" : "#5A5A6A",
                         borderRadius: 10, padding: "1px 6px", minWidth: 18, textAlign: "center",
+                        transition: "background 120ms ease-out",
                       }}>
                         {item.badge}
                       </span>

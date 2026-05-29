@@ -11,7 +11,6 @@ import { CardShowcase } from "./components/CardShowcase";
 import { BadgeShowcase } from "./components/BadgeShowcase";
 import { MetricShowcase } from "./components/MetricShowcase";
 import { AvatarShowcase } from "./components/AvatarShowcase";
-import { DiagramShowcase } from "./components/DiagramShowcase";
 import { NavigationShowcase } from "./components/NavigationShowcase";
 import { ToastShowcase } from "./components/ToastShowcase";
 import { MotionShowcase } from "./components/MotionShowcase";
@@ -55,7 +54,6 @@ const navItems = [
   { id: "badges", label: "Badges" },
   { id: "metrics", label: "Metrics" },
   { id: "avatars", label: "Avatars" },
-  { id: "diagrams", label: "Diagrams" },
   { id: "toasts", label: "Toasts" },
   { id: "motion", label: "Motion" },
   { id: "patterns", label: "Patterns" },
@@ -392,7 +390,6 @@ export default function App() {
             <BadgeShowcase />
             <MetricShowcase />
             <AvatarShowcase />
-            <DiagramShowcase />
             <ToastShowcase />
             <MotionShowcase />
             <PatternShowcase />
