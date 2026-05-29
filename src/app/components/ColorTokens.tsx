@@ -36,6 +36,15 @@ const swatches = [
       { name: "Info", hex: "#1B1BFF", role: "Informational. Same as accent-blue.", textOnSwatch: "#FFFFFF" },
     ],
   },
+  {
+    group: "Data Visualisation",
+    tokens: [
+      { name: "Chart Blue", hex: "#1B1BFF", role: "Primary. Default colour for all charts and metrics. Use alone before introducing additional series.", textOnSwatch: "#FFFFFF", primary: true },
+      { name: "Chart Pink", hex: "#DC0073", role: "Series 2. Introduced only when a second data series is needed.", textOnSwatch: "#FFFFFF" },
+      { name: "Chart Yellow", hex: "#F5B700", role: "Series 3. Introduced only when a third data series is needed.", textOnSwatch: "#0A0A0F" },
+      { name: "Chart Purple", hex: "#7340FF", role: "Series 4. Introduced only when a fourth data series is needed.", textOnSwatch: "#FFFFFF" },
+    ],
+  },
 ];
 
 const contrastRules = [
@@ -79,19 +88,31 @@ export function ColorTokens() {
               <div
                 key={t.name + t.hex}
                 style={{
-                  width: 188,
+                  width: (t as any).primary ? 280 : 188,
                   borderRadius: 10,
                   overflow: "hidden",
-                  border: t.bordered ? "1px solid rgba(0,0,0,0.10)" : "none",
-                  boxShadow: "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05)",
+                  border: (t as any).primary ? "2px solid #1B1BFF" : t.bordered ? "1px solid rgba(0,0,0,0.10)" : "none",
+                  boxShadow: (t as any).primary ? "0 4px 12px rgba(27,27,255,0.20)" : "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05)",
                 }}
               >
-                <div style={{ background: t.hex, height: 72, width: "100%" }} />
+                <div style={{ background: t.hex, height: (t as any).primary ? 96 : 72, width: "100%", position: "relative" }}>
+                  {(t as any).primary && (
+                    <span style={{
+                      position: "absolute", top: 10, left: 10,
+                      fontSize: 10, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 700,
+                      letterSpacing: "0.1em", textTransform: "uppercase",
+                      background: "rgba(255,255,255,0.22)", color: "#FFFFFF",
+                      padding: "3px 8px", borderRadius: 4,
+                    }}>
+                      Primary
+                    </span>
+                  )}
+                </div>
                 <div className="p-3" style={{ background: "#FFFFFF" }}>
                   <p style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 700, color: "#0A0A0F", lineHeight: 1.3, marginBottom: 2 }}>
                     {t.name}
                   </p>
-                  <p style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#1B1BFF", marginBottom: 4, fontFamily: "monospace" }}>
+                  <p style={{ fontSize: 12, fontFamily: "monospace", fontWeight: 400, color: "#1B1BFF", marginBottom: 4 }}>
                     {t.hex}
                   </p>
                   <p style={{ fontSize: 11, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#5A5A6A", lineHeight: 1.5 }}>
@@ -103,6 +124,35 @@ export function ColorTokens() {
           </div>
         </div>
       ))}
+
+      {/* Data vis preview */}
+      <div className="mb-10 p-6 rounded-[10px]" style={{ border: "1px solid rgba(0,0,0,0.10)", background: "#FFFFFF", boxShadow: "0 1px 3px rgba(0,0,0,0.08)" }}>
+        <p className="mb-5" style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", letterSpacing: "0.1em", textTransform: "uppercase", color: "#5A5A6A" }}>
+          Data visualisation — colour order
+        </p>
+        <div className="flex flex-col gap-4">
+          {[
+            { name: "Chart Blue", hex: "#1B1BFF", value: 84, label: "Revenue target", primary: true },
+            { name: "Chart Pink", hex: "#DC0073", value: 78, label: "New clients" },
+            { name: "Chart Yellow", hex: "#F5B700", value: 54, label: "Proposals sent" },
+            { name: "Chart Purple", hex: "#7340FF", value: 91, label: "Projects active" },
+          ].map((item) => (
+            <div key={item.name} style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <div style={{ width: item.primary ? 12 : 10, height: item.primary ? 12 : 10, borderRadius: "50%", background: item.hex, flexShrink: 0 }} />
+              <span style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: item.primary ? 700 : 400, color: item.primary ? "#0A0A0F" : "#5A5A6A", width: 130, flexShrink: 0 }}>
+                {item.label}{item.primary ? " — primary" : ""}
+              </span>
+              <div style={{ flex: 1, height: item.primary ? 12 : 8, background: "#F4F4F6", borderRadius: 9999, overflow: "hidden" }}>
+                <div style={{ width: `${item.value}%`, height: "100%", background: item.hex, borderRadius: "inherit", transition: "width 600ms ease-out" }} />
+              </div>
+              <span style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 700, color: "#0A0A0F", width: 32, textAlign: "right", flexShrink: 0 }}>{item.value}%</span>
+            </div>
+          ))}
+        </div>
+        <p className="mt-5" style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", color: "#BABAC4", lineHeight: 1.5 }}>
+          Always use in order: Blue → Pink → Yellow → Purple. Never mix data-vis colours with status colours in the same chart.
+        </p>
+      </div>
 
       {/* Contrast rules */}
       <div

@@ -15,6 +15,20 @@ import { DiagramShowcase } from "./components/DiagramShowcase";
 import { NavigationShowcase } from "./components/NavigationShowcase";
 import { ToastShowcase } from "./components/ToastShowcase";
 import { MotionShowcase } from "./components/MotionShowcase";
+import { PatternShowcase } from "./components/PatternShowcase";
+import { CheckboxShowcase } from "./components/CheckboxShowcase";
+import { ToggleShowcase } from "./components/ToggleShowcase";
+import { DropdownShowcase } from "./components/DropdownShowcase";
+import { TooltipShowcase } from "./components/TooltipShowcase";
+import { ProgressShowcase } from "./components/ProgressShowcase";
+import { SliderShowcase } from "./components/SliderShowcase";
+import { ModalShowcase } from "./components/ModalShowcase";
+import { FileInputShowcase } from "./components/FileInputShowcase";
+import { TabsShowcase } from "./components/TabsShowcase";
+import { TableShowcase } from "./components/TableShowcase";
+import { PaginationBreadcrumbShowcase } from "./components/PaginationBreadcrumbShowcase";
+import { SlideoutShowcase } from "./components/SlideoutShowcase";
+import { NotificationShowcase } from "./components/NotificationShowcase";
 
 const navItems = [
   { id: "brand", label: "Brand" },
@@ -24,6 +38,19 @@ const navItems = [
   { id: "navigation", label: "Navigation" },
   { id: "buttons", label: "Buttons" },
   { id: "inputs", label: "Inputs" },
+  { id: "checkboxes", label: "Checkboxes" },
+  { id: "toggles", label: "Toggles" },
+  { id: "dropdowns", label: "Dropdowns" },
+  { id: "tooltips", label: "Tooltips" },
+  { id: "progress", label: "Progress" },
+  { id: "sliders", label: "Sliders" },
+  { id: "modals", label: "Modals" },
+  { id: "fileinput", label: "Date & File" },
+  { id: "tabs", label: "Tabs" },
+  { id: "tables", label: "Tables" },
+  { id: "pagination", label: "Pagination" },
+  { id: "slideout", label: "Slideout Panels" },
+  { id: "notifications", label: "Notifications" },
   { id: "cards", label: "Cards" },
   { id: "badges", label: "Badges" },
   { id: "metrics", label: "Metrics" },
@@ -31,6 +58,7 @@ const navItems = [
   { id: "diagrams", label: "Diagrams" },
   { id: "toasts", label: "Toasts" },
   { id: "motion", label: "Motion" },
+  { id: "patterns", label: "Patterns" },
 ];
 
 export default function App() {
@@ -124,7 +152,11 @@ export default function App() {
           {navItems.map((item, i) => {
             const isGroupStart = [
               "navigation",
+              "checkboxes",
+              "tabs",
+              "cards",
               "motion",
+              "patterns",
             ].includes(item.id);
 
             return (
@@ -343,6 +375,19 @@ export default function App() {
             <NavigationShowcase />
             <ButtonShowcase />
             <InputShowcase />
+            <CheckboxShowcase />
+            <ToggleShowcase />
+            <DropdownShowcase />
+            <TooltipShowcase />
+            <ProgressShowcase />
+            <SliderShowcase />
+            <ModalShowcase />
+            <FileInputShowcase />
+            <TabsShowcase />
+            <TableShowcase />
+            <PaginationBreadcrumbShowcase />
+            <SlideoutShowcase />
+            <NotificationShowcase />
             <CardShowcase />
             <BadgeShowcase />
             <MetricShowcase />
@@ -350,6 +395,7 @@ export default function App() {
             <DiagramShowcase />
             <ToastShowcase />
             <MotionShowcase />
+            <PatternShowcase />
 
             {/* Exclusions section */}
             <section id="exclusions" className="mb-16" style={{ position: "relative" }}>
