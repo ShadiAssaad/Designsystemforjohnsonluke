@@ -33,6 +33,8 @@ export function CardShowcase() {
               : "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05)",
             transition: "box-shadow 180ms ease-out, border 180ms ease-out",
             cursor: "pointer",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <p
@@ -51,7 +53,7 @@ export function CardShowcase() {
             How Johnson Luke helped a B2B firm shift from commodity to premium through deliberate strategic positioning.
           </p>
           <div
-            style={{ marginTop: 20, borderTop: "1px solid rgba(0,0,0,0.10)", paddingTop: 16, display: "flex", alignItems: "center", justifyContent: "space-between" }}
+            style={{ marginTop: "auto", borderTop: "1px solid rgba(0,0,0,0.10)", paddingTop: 16, display: "flex", alignItems: "center", justifyContent: "space-between" }}
           >
             <span style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#5A5A6A" }}>
               B2B · Strategy
@@ -69,6 +71,8 @@ export function CardShowcase() {
             border: "1px solid rgba(255,255,255,0.12)",
             borderRadius: 10,
             padding: 24,
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <p
@@ -87,7 +91,7 @@ export function CardShowcase() {
             A proprietary diagnostic framework for mapping how audiences experience a brand versus how it intends to be received.
           </p>
           <div
-            style={{ marginTop: 20, borderTop: "1px solid rgba(255,255,255,0.10)", paddingTop: 16 }}
+            style={{ marginTop: "auto", borderTop: "1px solid rgba(255,255,255,0.10)", paddingTop: 16 }}
           >
             <button
               style={{ fontFamily: "'Rethink Sans', sans-serif", fontSize: 15, fontWeight: 700, padding: "10px 20px", borderRadius: 6, border: "none", background: "#1B1BFF", color: "#FFFFFF", cursor: "pointer" }}
@@ -103,6 +107,8 @@ export function CardShowcase() {
             background: "#1B1BFF",
             borderRadius: 10,
             padding: 24,
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <p
@@ -121,10 +127,10 @@ export function CardShowcase() {
             We work with leadership teams navigating significant brand transitions and market repositioning.
           </p>
           <div
-            style={{ marginTop: 20, borderTop: "1px solid rgba(255,255,255,0.20)", paddingTop: 16 }}
+            style={{ marginTop: "auto", borderTop: "1px solid #ffffff33", paddingTop: 16 }}
           >
             <button
-              style={{ fontFamily: "'Rethink Sans', sans-serif", fontSize: 15, fontWeight: 700, padding: "10px 20px", borderRadius: 6, border: "1.5px solid rgba(255,255,255,0.5)", background: "transparent", color: "#FFFFFF", cursor: "pointer" }}
+              style={{ fontFamily: "'Rethink Sans', sans-serif", fontSize: 15, fontWeight: 700, padding: "10px 20px", borderRadius: 6, border: "1.5px solid #ffffff80", background: "transparent", color: "#FFFFFF", cursor: "pointer" }}
             >
               Schedule a call
             </button>
