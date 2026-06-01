@@ -28,6 +28,7 @@ import { TableShowcase } from "./components/TableShowcase";
 import { PaginationBreadcrumbShowcase } from "./components/PaginationBreadcrumbShowcase";
 import { SlideoutShowcase } from "./components/SlideoutShowcase";
 import { NotificationShowcase } from "./components/NotificationShowcase";
+import { AccordionShowcase } from "./components/AccordionShowcase";
 
 const navItems = [
   { id: "brand", label: "Brand" },
@@ -50,6 +51,7 @@ const navItems = [
   { id: "pagination", label: "Pagination" },
   { id: "slideout", label: "Slideout Panels" },
   { id: "notifications", label: "Notifications" },
+  { id: "accordion", label: "Accordion" },
   { id: "cards", label: "Cards" },
   { id: "badges", label: "Badges" },
   { id: "metrics", label: "Metrics" },
@@ -152,7 +154,7 @@ export default function App() {
               "navigation",
               "checkboxes",
               "tabs",
-              "cards",
+              "accordion",
               "motion",
               "patterns",
             ].includes(item.id);
@@ -386,6 +388,7 @@ export default function App() {
             <PaginationBreadcrumbShowcase />
             <SlideoutShowcase />
             <NotificationShowcase />
+            <AccordionShowcase />
             <CardShowcase />
             <BadgeShowcase />
             <MetricShowcase />
