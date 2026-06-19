@@ -71,9 +71,9 @@ const patterns = [
 ];
 
 const tagColor: Record<string, { bg: string; text: string }> = {
-  Scatter:   { bg: "#EEEEFF", text: "#1B1BFF" },
+  Scatter:   { bg: "#EEEEFF", text: "#0000FF" },
   Tile:      { bg: "#EEFAF4", text: "#00A864" },
-  Interlock: { bg: "#EEEEFF", text: "#1B1BFF" },
+  Interlock: { bg: "#EEEEFF", text: "#0000FF" },
   Hero:      { bg: "#0A0A0F", text: "#01FF97" },
   Accent:    { bg: "#D1FAE5", text: "#065F46" },
   Grid:      { bg: "#EEFAF4", text: "#00A864" },
@@ -84,7 +84,7 @@ export function PatternShowcase() {
     <section id="patterns" className="mb-16">
       <p
         className="mb-3"
-        style={{ fontSize: 12, fontFamily: F, fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1BFF" }}
+        style={{ fontSize: 12, fontFamily: F, fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#0000FF" }}
       >
         Brand Assets
       </p>

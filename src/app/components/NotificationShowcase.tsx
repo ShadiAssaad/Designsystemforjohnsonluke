@@ -14,7 +14,7 @@ interface Notification {
 }
 
 const TYPE_DOT: Record<NotifType, string> = {
-  project: "#1B1BFF",
+  project: "#0000FF",
   mention: "#01FF97",
   deadline: "#E8334A",
   system: "#BABAC4",
@@ -172,7 +172,7 @@ function NotificationFeed() {
             {unread > 0 && (
               <button
                 onClick={markAllRead}
-                style={{ fontSize: 12, fontFamily: F, color: "#1B1BFF", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                style={{ fontSize: 12, fontFamily: F, color: "#0000FF", background: "none", border: "none", cursor: "pointer", padding: 0 }}
               >
                 Mark all read
               </button>

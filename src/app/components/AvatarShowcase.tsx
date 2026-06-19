@@ -24,7 +24,7 @@ function Avatar({ size, initials }: { size: number; initials: string }) {
           fontSize: Math.max(Math.round(size * 0.33), 9),
           fontFamily: "'Rethink Sans', sans-serif",
           fontWeight: 700,
-          color: "#1B1BFF",
+          color: "#0000FF",
           lineHeight: 1,
           letterSpacing: "0.02em",
         }}
@@ -171,7 +171,7 @@ export function AvatarShowcase() {
         style={{ background: "#F4F4F6", border: "1px solid rgba(0,0,0,0.10)" }}
       >
         <p style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#5A5A6A", lineHeight: 1.5 }}>
-          Circular crop is the only exception to the no-pill-radius rule. Background <code style={{ fontFamily: "monospace", background: "#EEEEFF", color: "#1B1BFF", padding: "1px 4px", borderRadius: 3, fontSize: 12 }}>#EEEEFF</code>, text <code style={{ fontFamily: "monospace", background: "#EEEEFF", color: "#1B1BFF", padding: "1px 4px", borderRadius: 3, fontSize: 12 }}>#1B1BFF</code>. Never add a border or shadow.
+          Circular crop is the only exception to the no-pill-radius rule. Background <code style={{ fontFamily: "monospace", background: "#EEEEFF", color: "#0000FF", padding: "1px 4px", borderRadius: 3, fontSize: 12 }}>#EEEEFF</code>, text <code style={{ fontFamily: "monospace", background: "#EEEEFF", color: "#0000FF", padding: "1px 4px", borderRadius: 3, fontSize: 12 }}>#0000FF</code>. Never add a border or shadow.
         </p>
       </div>
     </section>

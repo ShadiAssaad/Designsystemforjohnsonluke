@@ -6,7 +6,7 @@ type SortKey = "client" | "project" | "phase" | "budget" | "status" | "due";
 type SortDir = "asc" | "desc";
 
 const STATUS_COLORS: Record<string, { bg: string; color: string }> = {
-  Active: { bg: "#E8E8FF", color: "#1B1BFF" },
+  Active: { bg: "#E8E8FF", color: "#0000FF" },
   Review: { bg: "#FEF3C7", color: "#92400E" },
   Complete: { bg: "#D1FAE5", color: "#065F46" },
   "On Hold": { bg: "#F4F4F6", color: "#5A5A6A" },
@@ -25,10 +25,10 @@ function SortIcon({ dir, active }: { dir: SortDir; active: boolean }) {
   return (
     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ opacity: active ? 1 : 0.3 }}>
       {dir === "asc" || !active ? (
-        <path d="M5 2L8 6H2L5 2Z" fill={active && dir === "asc" ? "#1B1BFF" : "#5A5A6A"} />
+        <path d="M5 2L8 6H2L5 2Z" fill={active && dir === "asc" ? "#0000FF" : "#5A5A6A"} />
       ) : null}
       {dir === "desc" || !active ? (
-        <path d="M5 8L2 4H8L5 8Z" fill={active && dir === "desc" ? "#1B1BFF" : "#5A5A6A"} />
+        <path d="M5 8L2 4H8L5 8Z" fill={active && dir === "desc" ? "#0000FF" : "#5A5A6A"} />
       ) : null}
       {!active && (
         <>
@@ -113,7 +113,7 @@ export function TableShowcase() {
         }}>
           {selected.size > 0 ? (
             <>
-              <span style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: "#1B1BFF" }}>
+              <span style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: "#0000FF" }}>
                 {selected.size} selected
               </span>
               <div style={{ width: 1, height: 16, background: "rgba(27,27,255,0.2)" }} />
@@ -146,8 +146,8 @@ export function TableShowcase() {
                     onClick={toggleAll}
                     style={{
                       width: 16, height: 16, borderRadius: 3, cursor: "pointer",
-                      border: `1.5px solid ${allSelected || someSelected ? "#1B1BFF" : "rgba(0,0,0,0.22)"}`,
-                      background: allSelected ? "#1B1BFF" : "#FFFFFF",
+                      border: `1.5px solid ${allSelected || someSelected ? "#0000FF" : "rgba(0,0,0,0.22)"}`,
+                      background: allSelected ? "#0000FF" : "#FFFFFF",
                       display: "flex", alignItems: "center", justifyContent: "center",
                     }}
                   >
@@ -158,7 +158,7 @@ export function TableShowcase() {
                     )}
                     {someSelected && !allSelected && (
                       <svg width="8" height="2" viewBox="0 0 8 2" fill="none">
-                        <path d="M1 1h6" stroke="#1B1BFF" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M1 1h6" stroke="#0000FF" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     )}
                   </div>
@@ -178,7 +178,7 @@ export function TableShowcase() {
                       <span style={{
                         fontSize: 11, fontFamily: F, fontWeight: 700,
                         letterSpacing: "0.08em", textTransform: "uppercase",
-                        color: sortKey === col.key ? "#1B1BFF" : "#5A5A6A",
+                        color: sortKey === col.key ? "#0000FF" : "#5A5A6A",
                       }}>
                         {col.label}
                       </span>
@@ -212,8 +212,8 @@ export function TableShowcase() {
                         onClick={() => toggleRow(row.id)}
                         style={{
                           width: 16, height: 16, borderRadius: 3, cursor: "pointer",
-                          border: `1.5px solid ${isSelected ? "#1B1BFF" : "rgba(0,0,0,0.22)"}`,
-                          background: isSelected ? "#1B1BFF" : "#FFFFFF",
+                          border: `1.5px solid ${isSelected ? "#0000FF" : "rgba(0,0,0,0.22)"}`,
+                          background: isSelected ? "#0000FF" : "#FFFFFF",
                           display: "flex", alignItems: "center", justifyContent: "center",
                         }}
                       >

@@ -2,9 +2,9 @@ const swatches = [
   {
     group: "Brand Palette",
     tokens: [
-      { name: "Electric Blue", hex: "#1B1BFF", role: "Primary. Structure, authority, interaction states.", textOnSwatch: "#FFFFFF" },
+      { name: "Electric Blue", hex: "#0000FF", role: "Primary. Structure, authority, interaction states.", textOnSwatch: "#FFFFFF" },
       { name: "Neon Green", hex: "#01FF97", role: "Decoration only — never as text. Use #00A864 for green text.", textOnSwatch: "#0A0A0F" },
-      { name: "Near Black", hex: "#0A0A0F", role: "Ground. Dark surfaces, body text on light.", textOnSwatch: "#FFFFFF" },
+      { name: "Near Black", hex: "#0A0A0F", role: "Dark mode only. Dark surfaces, overlays, and text on dark backgrounds. Never use as text on light surfaces — use Text Primary instead.", textOnSwatch: "#FFFFFF" },
       { name: "Off White", hex: "#F4F4F6", role: "Subtle surface, secondary fills, sidebar.", textOnSwatch: "#0A0A0F" },
       { name: "White", hex: "#FFFFFF", role: "Primary content surface.", textOnSwatch: "#0A0A0F", bordered: true },
     ],
@@ -12,8 +12,8 @@ const swatches = [
   {
     group: "Surfaces & Tints",
     tokens: [
-      { name: "Surface Blue", hex: "#1B1BFF", role: "Blue card backgrounds.", textOnSwatch: "#FFFFFF" },
-      { name: "Surface Blue Tint", hex: "#EEEEFF", role: "Selection bg, avatar bg, hover fill.", textOnSwatch: "#1B1BFF" },
+      { name: "Surface Blue", hex: "#0000FF", role: "Blue card backgrounds.", textOnSwatch: "#FFFFFF" },
+      { name: "Surface Blue Tint", hex: "#EEEEFF", role: "Selection bg, avatar bg, hover fill.", textOnSwatch: "#0000FF" },
       { name: "Surface Ground", hex: "#0A0A0F", role: "Dark cards, hero backgrounds.", textOnSwatch: "#FFFFFF" },
     ],
   },
@@ -33,13 +33,13 @@ const swatches = [
       { name: "Success", hex: "#00A864", role: "Positive delta, confirm states, success badges.", textOnSwatch: "#FFFFFF" },
       { name: "Warning", hex: "#D97706", role: "Caution, pending states.", textOnSwatch: "#FFFFFF" },
       { name: "Danger", hex: "#DC2626", role: "Error, destructive action, danger badges.", textOnSwatch: "#FFFFFF" },
-      { name: "Info", hex: "#1B1BFF", role: "Informational. Same as accent-blue.", textOnSwatch: "#FFFFFF" },
+      { name: "Info", hex: "#0000FF", role: "Informational. Same as accent-blue.", textOnSwatch: "#FFFFFF" },
     ],
   },
   {
     group: "Data Visualisation",
     tokens: [
-      { name: "Chart Blue", hex: "#1B1BFF", role: "Primary. Default colour for all charts and metrics. Use alone before introducing additional series.", textOnSwatch: "#FFFFFF", primary: true },
+      { name: "Chart Blue", hex: "#0000FF", role: "Primary. Default colour for all charts and metrics. Use alone before introducing additional series.", textOnSwatch: "#FFFFFF", primary: true },
       { name: "Chart Pink", hex: "#DC0073", role: "Series 2. Introduced only when a second data series is needed.", textOnSwatch: "#FFFFFF" },
       { name: "Chart Yellow", hex: "#F5B700", role: "Series 3. Introduced only when a third data series is needed.", textOnSwatch: "#0A0A0F" },
       { name: "Chart Purple", hex: "#7340FF", role: "Series 4. Introduced only when a fourth data series is needed.", textOnSwatch: "#FFFFFF" },
@@ -58,7 +58,7 @@ export function ColorTokens() {
     <section id="color" className="mb-16">
       <p
         className="mb-3"
-        style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1BFF" }}
+        style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#0000FF" }}
       >
         Color System
       </p>
@@ -91,7 +91,7 @@ export function ColorTokens() {
                   width: (t as any).primary ? 280 : 188,
                   borderRadius: 10,
                   overflow: "hidden",
-                  border: (t as any).primary ? "2px solid #1B1BFF" : t.bordered ? "1px solid rgba(0,0,0,0.10)" : "none",
+                  border: (t as any).primary ? "2px solid #0000FF" : t.bordered ? "1px solid rgba(0,0,0,0.10)" : "none",
                   boxShadow: (t as any).primary ? "0 4px 12px rgba(27,27,255,0.20)" : "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05)",
                 }}
               >
@@ -112,7 +112,7 @@ export function ColorTokens() {
                   <p style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 700, color: "#0A0A0F", lineHeight: 1.3, marginBottom: 2 }}>
                     {t.name}
                   </p>
-                  <p style={{ fontSize: 12, fontFamily: "monospace", fontWeight: 400, color: "#1B1BFF", marginBottom: 4 }}>
+                  <p style={{ fontSize: 12, fontFamily: "monospace", fontWeight: 400, color: "#0000FF", marginBottom: 4 }}>
                     {t.hex}
                   </p>
                   <p style={{ fontSize: 11, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#5A5A6A", lineHeight: 1.5 }}>
@@ -132,7 +132,7 @@ export function ColorTokens() {
         </p>
         <div className="flex flex-col gap-4">
           {[
-            { name: "Chart Blue", hex: "#1B1BFF", value: 84, label: "Revenue target", primary: true },
+            { name: "Chart Blue", hex: "#0000FF", value: 84, label: "Revenue target", primary: true },
             { name: "Chart Pink", hex: "#DC0073", value: 78, label: "New clients" },
             { name: "Chart Yellow", hex: "#F5B700", value: 54, label: "Proposals sent" },
             { name: "Chart Purple", hex: "#7340FF", value: 91, label: "Projects active" },
@@ -193,12 +193,32 @@ export function ColorTokens() {
         >
           Gradient — Blue to Green only
         </p>
-        <div style={{ height: 40, borderRadius: 6, background: "linear-gradient(to right, #1B1BFF, #01FF97)" }} />
+        <div style={{ height: 40, borderRadius: 6, background: "linear-gradient(to right, #0000FF, #01FF97)" }} />
         <p
           className="mt-3"
           style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#5A5A6A", lineHeight: 1.5 }}
         >
           Permitted only in brand illustrations and hero backgrounds. Never on UI components, buttons, or text.
+        </p>
+      </div>
+
+      {/* Gradient — Blue depth */}
+      <div
+        className="mt-4 p-5 rounded-[10px]"
+        style={{ background: "#F4F4F6", border: "1px solid rgba(0,0,0,0.10)" }}
+      >
+        <p
+          className="mb-3"
+          style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#5A5A6A" }}
+        >
+          Gradient — Blue depth
+        </p>
+        <div style={{ height: 40, borderRadius: 6, background: "linear-gradient(-90deg, #0000FF 0%, #1616A8 33%, #050554 100%)" }} />
+        <p
+          className="mt-3"
+          style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#5A5A6A", lineHeight: 1.5 }}
+        >
+          Electric Blue to deep navy. Use for hero backgrounds and large-format brand surfaces. Never on UI components, buttons, or text.
         </p>
       </div>
     </section>

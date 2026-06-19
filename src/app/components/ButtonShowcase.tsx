@@ -31,11 +31,11 @@ function PrimaryBtn({ children, stateOverride }: { children: React.ReactNode; st
     <button
       style={{
         ...btnBase,
-        background: isDisabled ? "#BABAC4" : isActive ? "#0F0FA0" : isHover ? "#1414CC" : "#1B1BFF",
+        background: isDisabled ? "#BABAC4" : isActive ? "#0F0FA0" : isHover ? "#1414CC" : "#0000FF",
         color: "#FFFFFF",
         transform: isActive ? "scale(0.98)" : "scale(1)",
         cursor: isDisabled ? "not-allowed" : "pointer",
-        boxShadow: isFocus ? "0 0 0 2px #FFFFFF, 0 0 0 4px #1B1BFF" : "none",
+        boxShadow: isFocus ? "0 0 0 2px #FFFFFF, 0 0 0 4px #0000FF" : "none",
       }}
       disabled={isDisabled}
       onMouseEnter={() => setHovered(true)}
@@ -65,11 +65,11 @@ function SecondaryBtn({ children, stateOverride }: { children: React.ReactNode; 
       style={{
         ...btnBase,
         background: isActive ? "#DDDDF5" : isHover || isFocus ? "#EEEEFF" : "transparent",
-        color: isDisabled ? "#BABAC4" : "#1B1BFF",
-        border: `1.5px solid ${isDisabled ? "#BABAC4" : "#1B1BFF"}`,
+        color: isDisabled ? "#BABAC4" : "#0000FF",
+        border: `1.5px solid ${isDisabled ? "#BABAC4" : "#0000FF"}`,
         transform: isActive ? "scale(0.98)" : "scale(1)",
         cursor: isDisabled ? "not-allowed" : "pointer",
-        boxShadow: isFocus ? "0 0 0 2px #FFFFFF, 0 0 0 4px #1B1BFF" : "none",
+        boxShadow: isFocus ? "0 0 0 2px #FFFFFF, 0 0 0 4px #0000FF" : "none",
       }}
       disabled={isDisabled}
       onMouseEnter={() => setHovered(true)}
@@ -103,7 +103,7 @@ function GhostBtn({ children, stateOverride }: { children: React.ReactNode; stat
         border: "none",
         transform: isActive ? "scale(0.98)" : "scale(1)",
         cursor: isDisabled ? "not-allowed" : "pointer",
-        boxShadow: isFocus ? "0 0 0 2px #FFFFFF, 0 0 0 4px #1B1BFF" : "none",
+        boxShadow: isFocus ? "0 0 0 2px #FFFFFF, 0 0 0 4px #0000FF" : "none",
       }}
       disabled={isDisabled}
       onMouseEnter={() => setHovered(true)}
@@ -158,7 +158,7 @@ function SegmentedGroup({ options }: { options: string[] }) {
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <div style={{ display: "inline-flex", border: "1.5px solid #1B1BFF", borderRadius: 7, overflow: "hidden" }}>
+    <div style={{ display: "inline-flex", border: "1.5px solid #0000FF", borderRadius: 7, overflow: "hidden" }}>
       {options.map((opt, i) => {
         const isSelected = selected === opt;
         const isHovered = hovered === opt && !isSelected;
@@ -174,10 +174,10 @@ function SegmentedGroup({ options }: { options: string[] }) {
               fontFamily: "'Rethink Sans', sans-serif",
               fontSize: 13,
               fontWeight: isSelected ? 700 : 400,
-              color: isSelected ? "#FFFFFF" : isHovered ? "#1B1BFF" : "#1B1BFF",
-              background: isSelected ? "#1B1BFF" : isHovered ? "#EEEEFF" : "#FFFFFF",
+              color: isSelected ? "#FFFFFF" : isHovered ? "#0000FF" : "#0000FF",
+              background: isSelected ? "#0000FF" : isHovered ? "#EEEEFF" : "#FFFFFF",
               border: "none",
-              borderLeft: i > 0 ? "1px solid #1B1BFF" : "none",
+              borderLeft: i > 0 ? "1px solid #0000FF" : "none",
               cursor: "pointer",
               transition: "background 120ms ease-out, color 120ms ease-out",
               whiteSpace: "nowrap",
@@ -221,7 +221,7 @@ function MultiSegmentedGroup({ options }: { options: string[] }) {
               fontFamily: "'Rethink Sans', sans-serif",
               fontSize: 13,
               fontWeight: isSelected ? 700 : 400,
-              color: isSelected ? "#1B1BFF" : isHovered ? "#0A0A0F" : "#5A5A6A",
+              color: isSelected ? "#0000FF" : isHovered ? "#0A0A0F" : "#5A5A6A",
               background: isSelected ? "#EEEEFF" : isHovered ? "#F4F4F6" : "#FFFFFF",
               border: "none",
               borderLeft: i > 0 ? "1px solid rgba(0,0,0,0.10)" : "none",
@@ -233,7 +233,7 @@ function MultiSegmentedGroup({ options }: { options: string[] }) {
           >
             {isSelected && (
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6l2.5 2.5L10 3.5" stroke="#1B1BFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 6l2.5 2.5L10 3.5" stroke="#0000FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             )}
             {opt}
@@ -310,7 +310,7 @@ function SplitButton() {
           fontSize: 13,
           fontWeight: 700,
           color: "#FFFFFF",
-          background: hoverMain ? "#1414CC" : "#1B1BFF",
+          background: hoverMain ? "#1414CC" : "#0000FF",
           border: "none",
           borderRadius: "7px 0 0 7px",
           cursor: "pointer",
@@ -332,7 +332,7 @@ function SplitButton() {
           height: 38,
           display: "flex", alignItems: "center", justifyContent: "center",
           color: "#FFFFFF",
-          background: hoverArrow ? "#1414CC" : "#1B1BFF",
+          background: hoverArrow ? "#1414CC" : "#0000FF",
           border: "none",
           borderRadius: "0 7px 7px 0",
           cursor: "pointer",
@@ -361,7 +361,7 @@ function SplitButton() {
                 padding: "8px 12px", borderRadius: 6,
                 fontFamily: "'Rethink Sans', sans-serif", fontSize: 13,
                 fontWeight: selectedAction === opt ? 700 : 400,
-                color: selectedAction === opt ? "#1B1BFF" : "#0A0A0F",
+                color: selectedAction === opt ? "#0000FF" : "#0A0A0F",
                 background: "transparent", border: "none", cursor: "pointer",
               }}
               onMouseEnter={e => { e.currentTarget.style.background = "#F4F4F6"; }}
@@ -424,7 +424,7 @@ function IconToolbar() {
           padding: "0 12px", height: 36,
           fontFamily: "'Rethink Sans', sans-serif", fontSize: 12,
           fontWeight: isActive ? 700 : 400,
-          color: isActive ? "#1B1BFF" : isHov ? "#0A0A0F" : "#5A5A6A",
+          color: isActive ? "#0000FF" : isHov ? "#0A0A0F" : "#5A5A6A",
           background: isActive ? "#EEEEFF" : isHov ? "#EBEBEB" : "transparent",
           border: "none", cursor: "pointer",
           transition: "background 120ms ease-out, color 120ms ease-out",
@@ -538,7 +538,7 @@ export function ButtonShowcase() {
     <section id="buttons" className="mb-16">
       <p
         className="mb-3"
-        style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1BFF" }}
+        style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#0000FF" }}
       >
         Components
       </p>

@@ -41,7 +41,7 @@ export function BrandHero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, rgba(10,10,15,0.92) 0%, rgba(10,10,15,0.3) 60%, transparent 100%)",
+              "linear-gradient(-90deg, #0000FF 0%, #1616A8 33%, #050554 100%)",
           }}
         />
         <div className="relative z-10 px-10 pb-12 pt-16">
@@ -114,7 +114,7 @@ export function BrandHero() {
           }}
         >
           <div>Brand Relationship Design</div>
-          <div style={{ color: "#1B1BFF" }}>johnson-luke.com</div>
+          <div style={{ color: "#0000FF" }}>johnson-luke.com</div>
         </div>
       </div>
 

@@ -25,8 +25,8 @@ const toastVariants = [
   },
   {
     variant: "Info",
-    border: "#1B1BFF",
-    icon: "#1B1BFF",
+    border: "#0000FF",
+    icon: "#0000FF",
     title: "New framework update",
     detail: "The Perception Engine v2.1 is now available. View the release notes.",
   },
@@ -174,7 +174,7 @@ export function ToastShowcase() {
                 fontFamily: "'Rethink Sans', sans-serif",
                 fontSize: 13,
                 fontWeight: 700,
-                color: "#1B1BFF",
+                color: "#0000FF",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -212,7 +212,7 @@ export function ToastShowcase() {
                 borderRadius: 6,
                 border: `1.5px solid ${t.border}`,
                 background: "transparent",
-                color: t.border === "#1B1BFF" ? "#1B1BFF" : t.border,
+                color: t.border === "#0000FF" ? "#0000FF" : t.border,
                 cursor: "pointer",
               }}
             >

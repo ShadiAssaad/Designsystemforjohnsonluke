@@ -21,7 +21,7 @@ function Toggle({
         width: 40,
         height: 24,
         borderRadius: 9999,
-        background: checked ? "#1B1BFF" : "rgba(0,0,0,0.10)",
+        background: checked ? "#0000FF" : "rgba(0,0,0,0.10)",
         border: "none",
         cursor: disabled ? "not-allowed" : "pointer",
         outline: "none",

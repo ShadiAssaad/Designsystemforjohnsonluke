@@ -79,11 +79,11 @@ function DetailPanel({ onClose }: { onClose: () => void }) {
               style={{
                 padding: "10px 0", marginRight: 20,
                 background: "none", border: "none",
-                borderBottom: `2px solid ${tab === t ? "#1B1BFF" : "transparent"}`,
+                borderBottom: `2px solid ${tab === t ? "#0000FF" : "transparent"}`,
                 marginBottom: -1,
                 fontFamily: F, fontSize: 13,
                 fontWeight: tab === t ? 700 : 400,
-                color: tab === t ? "#1B1BFF" : "#5A5A6A",
+                color: tab === t ? "#0000FF" : "#5A5A6A",
                 cursor: "pointer", outline: "none",
                 textTransform: "capitalize",
               }}
@@ -131,7 +131,7 @@ function DetailPanel({ onClose }: { onClose: () => void }) {
               ].map((item, i, arr) => (
                 <div key={i} style={{ display: "flex", gap: 14, paddingBottom: i < arr.length - 1 ? 20 : 0 }}>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#1B1BFF", marginTop: 4, flexShrink: 0 }} />
+                    <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#0000FF", marginTop: 4, flexShrink: 0 }} />
                     {i < arr.length - 1 && <div style={{ width: 1, flex: 1, background: "rgba(0,0,0,0.08)", marginTop: 6 }} />}
                   </div>
                   <div style={{ paddingBottom: 4 }}>
@@ -192,8 +192,8 @@ function FilterPanel({ onClose }: { onClose: () => void }) {
       <div onClick={onToggle} style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer", padding: "6px 0" }}>
         <div style={{
           width: 16, height: 16, borderRadius: 3, flexShrink: 0,
-          border: `1.5px solid ${checked ? "#1B1BFF" : "rgba(0,0,0,0.22)"}`,
-          background: checked ? "#1B1BFF" : "#FFFFFF",
+          border: `1.5px solid ${checked ? "#0000FF" : "rgba(0,0,0,0.22)"}`,
+          background: checked ? "#0000FF" : "#FFFFFF",
           display: "flex", alignItems: "center", justifyContent: "center",
         }}>
           {checked && (

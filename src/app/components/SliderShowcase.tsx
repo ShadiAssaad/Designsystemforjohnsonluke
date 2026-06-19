@@ -10,7 +10,7 @@ function Slider({
   max = 100,
   step = 1,
   disabled = false,
-  color = "#1B1BFF",
+  color = "#0000FF",
 }: {
   value: number[];
   onChange: (v: number[]) => void;
@@ -101,7 +101,7 @@ function SliderRow({
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 12 }}>
         <span style={{ fontSize: 13, fontFamily: F, color: disabled ? "#BABAC4" : "#0A0A0F" }}>{label}</span>
-        <span style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: disabled ? "#BABAC4" : "#1B1BFF" }}>{display}</span>
+        <span style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: disabled ? "#BABAC4" : "#0000FF" }}>{display}</span>
       </div>
       <Slider value={value} onChange={onChange} min={min} max={max} step={step} disabled={disabled} />
     </div>
@@ -142,7 +142,7 @@ export function SliderShowcase() {
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 12 }}>
                 <span style={{ fontSize: 13, fontFamily: F, color: "#0A0A0F" }}>Project timeline</span>
-                <span style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: "#1B1BFF" }}>
+                <span style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: "#0000FF" }}>
                   Wk {range[0]}–{range[1]}
                 </span>
               </div>
@@ -155,7 +155,7 @@ export function SliderShowcase() {
               <div style={{ marginTop: 32 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 12 }}>
                   <span style={{ fontSize: 13, fontFamily: F, color: "#0A0A0F" }}>Budget band (£k)</span>
-                  <span style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: "#1B1BFF" }}>
+                  <span style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: "#0000FF" }}>
                     £{[20, 80][0]}k–£{[20, 80][1]}k
                   </span>
                 </div>

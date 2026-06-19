@@ -26,7 +26,7 @@ export function MotionShowcase() {
           fontWeight: 400,
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          color: "#1B1BFF",
+          color: "#0000FF",
         }}
       >
         Motion
@@ -117,7 +117,7 @@ export function MotionShowcase() {
                 fontSize: 14,
                 fontFamily: "'Rethink Sans', sans-serif",
                 fontWeight: 400,
-                color: "#1B1BFF",
+                color: "#0000FF",
                 fontVariantNumeric: "tabular-nums",
               }}
             >

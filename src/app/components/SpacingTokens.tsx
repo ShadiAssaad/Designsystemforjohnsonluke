@@ -54,7 +54,7 @@ export function SpacingTokens() {
     <section id="spacing" className="mb-16">
       <p
         className="mb-3"
-        style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#1B1BFF" }}
+        style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#0000FF" }}
       >
         Tokens
       </p>
@@ -74,7 +74,7 @@ export function SpacingTokens() {
               <div key={s.name} className="flex items-center gap-4">
                 <div
                   style={{
-                    background: "#1B1BFF",
+                    background: "#0000FF",
                     height: 18,
                     width: Math.min(s.px * 1.8, 180),
                     borderRadius: 3,
@@ -101,14 +101,14 @@ export function SpacingTokens() {
                     width: 52,
                     height: 52,
                     background: "#EEEEFF",
-                    border: "1.5px solid #1B1BFF",
+                    border: "1.5px solid #0000FF",
                     borderRadius: Math.min(r.px, 26),
                     flexShrink: 0,
                   }}
                 />
                 <div>
                   <p style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 700, color: "#0A0A0F" }}>{r.name}</p>
-                  <p style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#1B1BFF", marginTop: 1 }}>
+                  <p style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#0000FF", marginTop: 1 }}>
                     {r.px >= 9999 ? "9999px" : `${r.px}px`}
                   </p>
                   <p style={{ fontSize: 11, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#5A5A6A", marginTop: 2 }}>{r.use}</p>

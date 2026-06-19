@@ -7,7 +7,7 @@ const F = "'Rethink Sans', sans-serif";
 function ProgressBar({
   label,
   value,
-  color = "#1B1BFF",
+  color = "#0000FF",
   indeterminate = false,
 }: {
   label: string;

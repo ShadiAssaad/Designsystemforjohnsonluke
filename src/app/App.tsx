@@ -183,7 +183,7 @@ export default function App() {
                     fontFamily: "'Rethink Sans', sans-serif",
                     fontSize: 13,
                     fontWeight: active === item.id ? 700 : 400,
-                    color: active === item.id ? "#1B1BFF" : "#5A5A6A",
+                    color: active === item.id ? "#0000FF" : "#5A5A6A",
                     background:
                       active === item.id ? "#E8E8FF" : "transparent",
                     transition:
@@ -296,7 +296,7 @@ export default function App() {
               fontFamily: "'Rethink Sans', sans-serif",
               fontSize: 12,
               fontWeight: 400,
-              color: "#1B1BFF",
+              color: "#0000FF",
               background: "none",
               border: "none",
               cursor: "pointer",
@@ -328,7 +328,7 @@ export default function App() {
                   fontFamily: "'Rethink Sans', sans-serif",
                   fontSize: 12,
                   fontWeight: 400,
-                  color: "#1B1BFF",
+                  color: "#0000FF",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
@@ -354,7 +354,7 @@ export default function App() {
                   fontFamily: "'Rethink Sans', sans-serif",
                   fontSize: 16,
                   fontWeight: active === item.id ? 700 : 400,
-                  color: active === item.id ? "#1B1BFF" : "#0A0A0F",
+                  color: active === item.id ? "#0000FF" : "#0A0A0F",
                   background: active === item.id ? "#E8E8FF" : "transparent",
                   marginBottom: 4,
                 }}
@@ -419,7 +419,7 @@ export default function App() {
                   fontWeight: 400,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "#1B1BFF",
+                  color: "#0000FF",
                 }}
               >
                 Deliberate Exclusions

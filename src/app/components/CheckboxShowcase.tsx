@@ -44,8 +44,8 @@ function CheckItem({
           width: 18,
           height: 18,
           borderRadius: 4,
-          border: `1.5px solid ${active ? "#1B1BFF" : "rgba(0,0,0,0.22)"}`,
-          background: active ? "#1B1BFF" : "#FFFFFF",
+          border: `1.5px solid ${active ? "#0000FF" : "rgba(0,0,0,0.22)"}`,
+          background: active ? "#0000FF" : "#FFFFFF",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -88,8 +88,8 @@ function CheckboxGroup() {
 
   const rootStyle = (active: boolean): React.CSSProperties => ({
     width: 18, height: 18, borderRadius: 4,
-    border: `1.5px solid ${active ? "#1B1BFF" : "rgba(0,0,0,0.22)"}`,
-    background: active ? "#1B1BFF" : "#FFFFFF",
+    border: `1.5px solid ${active ? "#0000FF" : "rgba(0,0,0,0.22)"}`,
+    background: active ? "#0000FF" : "#FFFFFF",
     display: "flex", alignItems: "center", justifyContent: "center",
     cursor: "pointer", flexShrink: 0, outline: "none",
     transition: "border 150ms ease-out, background 150ms ease-out",

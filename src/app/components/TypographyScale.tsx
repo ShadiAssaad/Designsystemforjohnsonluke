@@ -121,7 +121,7 @@ export function TypographyScale() {
           fontWeight: 400,
           letterSpacing: "0.1em",
           textTransform: "uppercase",
-          color: "#1B1BFF",
+          color: "#0000FF",
         }}
       >
         Typography

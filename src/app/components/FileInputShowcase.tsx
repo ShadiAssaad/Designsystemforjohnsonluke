@@ -119,8 +119,8 @@ function CalendarPopup({
                 width: "100%", aspectRatio: "1",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 borderRadius: 6, border: "none",
-                background: edge ? "#1B1BFF" : inRange ? "#EEEEFF" : "transparent",
-                color: edge ? "#FFFFFF" : isToday ? "#1B1BFF" : "#0A0A0F",
+                background: edge ? "#0000FF" : inRange ? "#EEEEFF" : "transparent",
+                color: edge ? "#FFFFFF" : isToday ? "#0000FF" : "#0A0A0F",
                 fontFamily: F, fontSize: 13,
                 fontWeight: edge || isToday ? 700 : 400,
                 cursor: "pointer",
@@ -129,7 +129,7 @@ function CalendarPopup({
                 transition: "background 100ms ease-out",
               }}
               onMouseOver={e => { if (!edge) e.currentTarget.style.background = inRange ? "#DDDEFF" : "#F4F4F6"; }}
-              onMouseOut={e => { e.currentTarget.style.background = edge ? "#1B1BFF" : inRange ? "#EEEEFF" : "transparent"; }}
+              onMouseOut={e => { e.currentTarget.style.background = edge ? "#0000FF" : inRange ? "#EEEEFF" : "transparent"; }}
             >
               {day}
             </button>
@@ -163,7 +163,7 @@ function DatePicker({ label, placeholder = "Select a date" }: { label: string; p
         style={{
           display: "flex", alignItems: "center", justifyContent: "space-between",
           width: "100%", padding: "10px 14px",
-          background: "#FFFFFF", border: `1.5px solid ${open ? "#1B1BFF" : "rgba(0,0,0,0.12)"}`,
+          background: "#FFFFFF", border: `1.5px solid ${open ? "#0000FF" : "rgba(0,0,0,0.12)"}`,
           borderRadius: 8, cursor: "pointer", outline: "none",
           transition: "border-color 150ms ease-out",
         }}
@@ -172,8 +172,8 @@ function DatePicker({ label, placeholder = "Select a date" }: { label: string; p
           {selected ? formatDate(selected) : placeholder}
         </span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <rect x="2" y="3" width="12" height="11" rx="1.5" stroke={open ? "#1B1BFF" : "#BABAC4"} strokeWidth="1.4"/>
-          <path d="M5 1v3M11 1v3M2 7h12" stroke={open ? "#1B1BFF" : "#BABAC4"} strokeWidth="1.4" strokeLinecap="round"/>
+          <rect x="2" y="3" width="12" height="11" rx="1.5" stroke={open ? "#0000FF" : "#BABAC4"} strokeWidth="1.4"/>
+          <path d="M5 1v3M11 1v3M2 7h12" stroke={open ? "#0000FF" : "#BABAC4"} strokeWidth="1.4" strokeLinecap="round"/>
         </svg>
       </button>
       {open && (
@@ -240,7 +240,7 @@ function DateRangePicker() {
         onClick={() => { setOpen(true); if (!start) setPicking("start"); else if (!end) setPicking("end"); }}
         style={{
           display: "flex", alignItems: "center",
-          background: "#FFFFFF", border: `1.5px solid ${open ? "#1B1BFF" : "rgba(0,0,0,0.12)"}`,
+          background: "#FFFFFF", border: `1.5px solid ${open ? "#0000FF" : "rgba(0,0,0,0.12)"}`,
           borderRadius: 8, overflow: "hidden", cursor: "pointer",
           transition: "border-color 150ms ease-out",
         }}
@@ -255,15 +255,15 @@ function DateRangePicker() {
         </div>
         <div style={{ padding: "0 14px" }}>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <rect x="2" y="3" width="12" height="11" rx="1.5" stroke={open ? "#1B1BFF" : "#BABAC4"} strokeWidth="1.4"/>
-            <path d="M5 1v3M11 1v3M2 7h12" stroke={open ? "#1B1BFF" : "#BABAC4"} strokeWidth="1.4" strokeLinecap="round"/>
+            <rect x="2" y="3" width="12" height="11" rx="1.5" stroke={open ? "#0000FF" : "#BABAC4"} strokeWidth="1.4"/>
+            <path d="M5 1v3M11 1v3M2 7h12" stroke={open ? "#0000FF" : "#BABAC4"} strokeWidth="1.4" strokeLinecap="round"/>
           </svg>
         </div>
       </div>
       {open && picking && (
         <div style={{ position: "absolute", top: "calc(100% + 8px)", left: 0, zIndex: 50 }}>
           <div style={{ marginBottom: 6 }}>
-            <span style={{ fontSize: 11, fontFamily: F, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: picking === "start" ? "#1B1BFF" : "#BABAC4", background: "#FFFFFF", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(0,0,0,0.10)" }}>
+            <span style={{ fontSize: 11, fontFamily: F, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: picking === "start" ? "#0000FF" : "#BABAC4", background: "#FFFFFF", padding: "4px 10px", borderRadius: 6, border: "1px solid rgba(0,0,0,0.10)" }}>
               {picking === "start" ? "Select start date" : "Select end date"}
             </span>
           </div>
@@ -291,11 +291,11 @@ function DateRangePicker() {
 
 const FILE_TYPES: Record<string, { color: string; bg: string }> = {
   pdf:  { color: "#E8334A", bg: "#FFF0F0" },
-  jpg:  { color: "#1B1BFF", bg: "#EEEEFF" },
-  png:  { color: "#1B1BFF", bg: "#EEEEFF" },
+  jpg:  { color: "#0000FF", bg: "#EEEEFF" },
+  png:  { color: "#0000FF", bg: "#EEEEFF" },
   svg:  { color: "#DC0073", bg: "#FFE8F3" },
-  docx: { color: "#1B1BFF", bg: "#EEEEFF" },
-  doc:  { color: "#1B1BFF", bg: "#EEEEFF" },
+  docx: { color: "#0000FF", bg: "#EEEEFF" },
+  doc:  { color: "#0000FF", bg: "#EEEEFF" },
   xlsx: { color: "#00A864", bg: "#D1FAE5" },
   xls:  { color: "#00A864", bg: "#D1FAE5" },
   mp4:  { color: "#7340FF", bg: "#EDE8FF" },
@@ -327,7 +327,7 @@ function DropZone() {
       onDragLeave={() => setDragging(false)}
       onDrop={e => { e.preventDefault(); setDragging(false); }}
       style={{
-        border: `2px dashed ${dragging ? "#1B1BFF" : "rgba(0,0,0,0.15)"}`,
+        border: `2px dashed ${dragging ? "#0000FF" : "rgba(0,0,0,0.15)"}`,
         borderRadius: 10, padding: "40px 24px",
         background: dragging ? "#EEEEFF" : "#FAFAFA",
         display: "flex", flexDirection: "column", alignItems: "center", gap: 12,
@@ -337,7 +337,7 @@ function DropZone() {
     >
       <div style={{
         width: 48, height: 48, borderRadius: 12,
-        background: dragging ? "#1B1BFF" : "#F4F4F6",
+        background: dragging ? "#0000FF" : "#F4F4F6",
         display: "flex", alignItems: "center", justifyContent: "center",
         transition: "background 150ms ease-out",
       }}>
@@ -347,11 +347,11 @@ function DropZone() {
         </svg>
       </div>
       <div style={{ textAlign: "center" }}>
-        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 700, color: dragging ? "#1B1BFF" : "#0A0A0F", marginBottom: 4 }}>
+        <p style={{ fontFamily: F, fontSize: 14, fontWeight: 700, color: dragging ? "#0000FF" : "#0A0A0F", marginBottom: 4 }}>
           {dragging ? "Drop to upload" : "Drag files here"}
         </p>
         <p style={{ fontFamily: F, fontSize: 13, color: "#5A5A6A" }}>
-          or <span style={{ color: "#1B1BFF", textDecoration: "underline", cursor: "pointer" }}>browse from your computer</span>
+          or <span style={{ color: "#0000FF", textDecoration: "underline", cursor: "pointer" }}>browse from your computer</span>
         </p>
       </div>
       <p style={{ fontFamily: F, fontSize: 11, color: "#BABAC4", textAlign: "center" }}>
@@ -399,7 +399,7 @@ function FileRow({ file }: { file: FileEntry }) {
         {isUploading && (
           <>
             <div style={{ height: 4, background: "rgba(0,0,0,0.08)", borderRadius: 9999, overflow: "hidden", marginBottom: 4 }}>
-              <div style={{ width: `${file.progress}%`, height: "100%", background: "#1B1BFF", borderRadius: "inherit", transition: "width 400ms ease-out" }} />
+              <div style={{ width: `${file.progress}%`, height: "100%", background: "#0000FF", borderRadius: "inherit", transition: "width 400ms ease-out" }} />
             </div>
             <p style={{ fontSize: 11, fontFamily: F, color: "#BABAC4" }}>{file.progress}% uploaded…</p>
           </>
@@ -466,7 +466,7 @@ function LiveUploadDemo() {
     <div>
       <FileRow file={file} />
       {done && (
-        <button onClick={reset} style={{ marginTop: 8, fontFamily: F, fontSize: 12, color: "#1B1BFF", background: "none", border: "none", cursor: "pointer", padding: 0 }}>
+        <button onClick={reset} style={{ marginTop: 8, fontFamily: F, fontSize: 12, color: "#0000FF", background: "none", border: "none", cursor: "pointer", padding: 0 }}>
           ↺ Replay animation
         </button>
       )}

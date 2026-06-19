@@ -58,7 +58,7 @@ export function CardShowcase() {
             <span style={{ fontSize: 12, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, letterSpacing: "0.1em", textTransform: "uppercase", color: "#5A5A6A" }}>
               B2B · Strategy
             </span>
-            <span style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 700, color: "#1B1BFF" }}>
+            <span style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 700, color: "#0000FF" }}>
               Read case study →
             </span>
           </div>
@@ -94,7 +94,7 @@ export function CardShowcase() {
             style={{ marginTop: "auto", borderTop: "1px solid rgba(255,255,255,0.10)", paddingTop: 16 }}
           >
             <button
-              style={{ fontFamily: "'Rethink Sans', sans-serif", fontSize: 15, fontWeight: 700, padding: "10px 20px", borderRadius: 6, border: "none", background: "#1B1BFF", color: "#FFFFFF", cursor: "pointer" }}
+              style={{ fontFamily: "'Rethink Sans', sans-serif", fontSize: 15, fontWeight: 700, padding: "10px 20px", borderRadius: 6, border: "none", background: "#0000FF", color: "#FFFFFF", cursor: "pointer" }}
             >
               Explore the framework
             </button>
@@ -104,7 +104,7 @@ export function CardShowcase() {
         {/* Blue Card */}
         <div
           style={{
-            background: "#1B1BFF",
+            background: "#0000FF",
             borderRadius: 10,
             padding: 24,
             display: "flex",

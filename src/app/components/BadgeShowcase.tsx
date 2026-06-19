@@ -5,7 +5,7 @@ const badgeVariants: {
   label: string;
 }[] = [
   { name: "Default", bg: "#F4F4F6", text: "#5A5A6A", label: "Category" },
-  { name: "Blue", bg: "#EEEEFF", text: "#1B1BFF", label: "In progress" },
+  { name: "Blue", bg: "#EEEEFF", text: "#0000FF", label: "In progress" },
   { name: "Green", bg: "#EEFAF4", text: "#00A864", label: "Confirmed" },
   { name: "Warning", bg: "#FEF3CD", text: "#D97706", label: "Review needed" },
   { name: "Danger", bg: "#FEE8E8", text: "#DC2626", label: "Critical" },
@@ -77,7 +77,7 @@ export function BadgeShowcase() {
                   {v.name}
                 </p>
                 <Badge bg={v.bg} text={v.text}>{v.label}</Badge>
-                <p style={{ fontSize: 11, fontFamily: "'Rethink Sans', sans-serif", fontWeight: 400, color: "#BABAC4", fontFamily: "monospace" }}>
+                <p style={{ fontSize: 11, fontFamily: "monospace", fontWeight: 400, color: "#BABAC4" }}>
                   {v.text}
                 </p>
               </div>
@@ -122,7 +122,7 @@ export function BadgeShowcase() {
               <span style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", color: "#5A5A6A" }}>Requires action</span>
             </div>
             <div className="flex items-center gap-2">
-              <Badge bg="#EEEEFF" text="#1B1BFF">In review</Badge>
+              <Badge bg="#EEEEFF" text="#0000FF">In review</Badge>
               <span style={{ fontSize: 13, fontFamily: "'Rethink Sans', sans-serif", color: "#5A5A6A" }}>Under assessment</span>
             </div>
           </div>

@@ -31,7 +31,7 @@ function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
               </span>
             ) : (
               <>
-                <span style={{ fontSize: 13, fontFamily: F, color: "#1B1BFF", cursor: "pointer" }}>
+                <span style={{ fontSize: 13, fontFamily: F, color: "#0000FF", cursor: "pointer" }}>
                   {item.label}
                 </span>
                 <span style={{ fontSize: 13, fontFamily: F, color: "#BABAC4", padding: "0 2px" }}>/</span>
@@ -112,9 +112,9 @@ function Pagination({
               onClick={() => onChange(page as number)}
               style={{
                 ...btnBase,
-                background: current === page ? "#1B1BFF" : "#FFFFFF",
+                background: current === page ? "#0000FF" : "#FFFFFF",
                 color: current === page ? "#FFFFFF" : "#0A0A0F",
-                borderColor: current === page ? "#1B1BFF" : "rgba(0,0,0,0.10)",
+                borderColor: current === page ? "#0000FF" : "rgba(0,0,0,0.10)",
                 fontWeight: current === page ? 700 : 400,
               }}
             >

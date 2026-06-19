@@ -42,8 +42,8 @@ function UnderlineTabs() {
           <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <span style={{
               width: 16, height: 16, borderRadius: 4, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center",
-              background: item.done ? "#1B1BFF" : "transparent",
-              border: `1.5px solid ${item.done ? "#1B1BFF" : "rgba(0,0,0,0.20)"}`,
+              background: item.done ? "#0000FF" : "transparent",
+              border: `1.5px solid ${item.done ? "#0000FF" : "rgba(0,0,0,0.20)"}`,
             }}>
               {item.done && (
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -68,7 +68,7 @@ function UnderlineTabs() {
         ].map((p) => (
           <div key={p.name} style={{ display: "flex", alignItems: "center", gap: 12 }}>
             <div style={{
-              width: 32, height: 32, borderRadius: "50%", background: "#1B1BFF",
+              width: 32, height: 32, borderRadius: "50%", background: "#0000FF",
               display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
             }}>
               <span style={{ fontSize: 11, fontFamily: F, fontWeight: 700, color: "#FFFFFF" }}>{p.initials}</span>
@@ -94,7 +94,7 @@ function UnderlineTabs() {
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <div style={{
                 width: 10, height: 10, borderRadius: "50%", flexShrink: 0, marginTop: 4,
-                background: item.done ? "#1B1BFF" : "rgba(0,0,0,0.12)",
+                background: item.done ? "#0000FF" : "rgba(0,0,0,0.12)",
               }} />
               {i < arr.length - 1 && (
                 <div style={{ width: 1, flex: 1, background: "rgba(0,0,0,0.08)", marginTop: 4, marginBottom: 4, minHeight: 20 }} />
@@ -121,12 +121,12 @@ function UnderlineTabs() {
               padding: "10px 16px",
               background: "none",
               border: "none",
-              borderBottom: `2px solid ${active === tab.id ? "#1B1BFF" : "transparent"}`,
+              borderBottom: `2px solid ${active === tab.id ? "#0000FF" : "transparent"}`,
               marginBottom: -1,
               fontFamily: F,
               fontSize: 13,
               fontWeight: active === tab.id ? 700 : 400,
-              color: active === tab.id ? "#1B1BFF" : "#5A5A6A",
+              color: active === tab.id ? "#0000FF" : "#5A5A6A",
               cursor: "pointer",
               outline: "none",
               transition: "color 150ms ease-out, border-color 150ms ease-out",

@@ -23,7 +23,7 @@ function InsideLabelInput({
 
   let borderColor = "rgba(0,0,0,0.10)";
   let borderWidth = "1px";
-  if (focused && !disabled) { borderColor = "#1B1BFF"; borderWidth = "1.5px"; }
+  if (focused && !disabled) { borderColor = "#0000FF"; borderWidth = "1.5px"; }
   if (error) { borderColor = "#DC2626"; borderWidth = "1.5px"; }
   if (success) { borderColor = "#00A864"; borderWidth = "1.5px"; }
 
@@ -110,7 +110,7 @@ function InsideLabelTextarea({
       style={{
         minHeight: 100,
         background: "#FFFFFF",
-        border: `${focused ? "1.5px" : "1px"} solid ${focused ? "#1B1BFF" : "rgba(0,0,0,0.10)"}`,
+        border: `${focused ? "1.5px" : "1px"} solid ${focused ? "#0000FF" : "rgba(0,0,0,0.10)"}`,
         borderRadius: 6,
         padding: "10px 14px 12px",
         display: "flex",
@@ -162,7 +162,7 @@ function InsideLabelSelect({ label }: { label: string }) {
       style={{
         height: 56,
         background: "#FFFFFF",
-        border: `${focused ? "1.5px" : "1px"} solid ${focused ? "#1B1BFF" : "rgba(0,0,0,0.10)"}`,
+        border: `${focused ? "1.5px" : "1px"} solid ${focused ? "#0000FF" : "rgba(0,0,0,0.10)"}`,
         borderRadius: 6,
         padding: "10px 14px 8px",
         display: "flex",

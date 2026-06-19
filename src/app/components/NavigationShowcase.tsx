@@ -170,7 +170,7 @@ function TopNavWithDropdown() {
                   style={{
                     display: "flex", alignItems: "center", gap: 4,
                     fontFamily: F, fontSize: 14, fontWeight: isActive ? 700 : 400,
-                    color: isActive ? "#1B1BFF" : "#5A5A6A",
+                    color: isActive ? "#0000FF" : "#5A5A6A",
                     background: "none", border: "none", cursor: "pointer",
                     padding: "4px 0", transition: "color 180ms ease-out, font-weight 180ms ease-out",
                   }}
@@ -178,7 +178,7 @@ function TopNavWithDropdown() {
                   {link}
                   {isCapabilities && (
                     <span style={{
-                      color: dropOpen ? "#1B1BFF" : "#BABAC4",
+                      color: dropOpen ? "#0000FF" : "#BABAC4",
                       transition: "transform 180ms ease-out, color 180ms ease-out",
                       transform: dropOpen ? "rotate(180deg)" : "rotate(0deg)",
                       display: "flex",
@@ -217,12 +217,12 @@ function TopNavWithDropdown() {
                           }}
                         >
                           <div>
-                            <p style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: isSelected ? "#1B1BFF" : "#0A0A0F", marginBottom: 2 }}>{item.label}</p>
-                            <p style={{ fontSize: 12, fontFamily: F, color: isSelected ? "#1B1BFF" : "#5A5A6A", opacity: isSelected ? 0.8 : 1 }}>{item.desc}</p>
+                            <p style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: isSelected ? "#0000FF" : "#0A0A0F", marginBottom: 2 }}>{item.label}</p>
+                            <p style={{ fontSize: 12, fontFamily: F, color: isSelected ? "#0000FF" : "#5A5A6A", opacity: isSelected ? 0.8 : 1 }}>{item.desc}</p>
                           </div>
                           {isSelected && (
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0, marginLeft: 12 }}>
-                              <path d="M2.5 7l3.5 3.5 5.5-7" stroke="#1B1BFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                              <path d="M2.5 7l3.5 3.5 5.5-7" stroke="#0000FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
                           )}
                         </button>
@@ -238,7 +238,7 @@ function TopNavWithDropdown() {
           <button style={{
             fontFamily: F, fontSize: 14, fontWeight: 700,
             padding: "9px 18px", borderRadius: 6, border: "none",
-            background: "#1B1BFF", color: "#FFFFFF", cursor: "pointer",
+            background: "#0000FF", color: "#FFFFFF", cursor: "pointer",
           }}>
             Schedule a call
           </button>
@@ -296,7 +296,7 @@ function MobileNav() {
                 padding: "13px 12px", borderRadius: 8, border: "none",
                 fontFamily: F, fontSize: 16,
                 fontWeight: active === link ? 700 : 400,
-                color: active === link ? "#1B1BFF" : "#0A0A0F",
+                color: active === link ? "#0000FF" : "#0A0A0F",
                 background: active === link ? "#EEEEFF" : "transparent",
                 cursor: "pointer", marginBottom: 2,
               }}
@@ -309,7 +309,7 @@ function MobileNav() {
             display: "block", width: "100%", textAlign: "center",
             padding: "13px", borderRadius: 8, border: "none",
             fontFamily: F, fontSize: 15, fontWeight: 700,
-            background: "#1B1BFF", color: "#FFFFFF", cursor: "pointer",
+            background: "#0000FF", color: "#FFFFFF", cursor: "pointer",
           }}>
             Schedule a call
           </button>
@@ -389,7 +389,7 @@ function CollapsibleSidebar() {
                       borderRadius: 6, border: "none", cursor: "pointer",
                       fontFamily: F, fontSize: 13,
                       fontWeight: isActive ? 700 : 400,
-                      color: isActive ? "#1B1BFF" : "#5A5A6A",
+                      color: isActive ? "#0000FF" : "#5A5A6A",
                       background: isActive ? "#E8E8FF" : "transparent",
                       transition: "background 150ms ease-out, color 150ms ease-out",
                       whiteSpace: "nowrap", overflow: "hidden",
@@ -397,7 +397,7 @@ function CollapsibleSidebar() {
                     onMouseEnter={(e) => { if (!isActive) { e.currentTarget.style.background = "#EBEBEB"; e.currentTarget.style.color = "#0A0A0F"; } }}
                     onMouseLeave={(e) => { if (!isActive) { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#5A5A6A"; } }}
                   >
-                    <span style={{ color: isActive ? "#1B1BFF" : "#BABAC4", flexShrink: 0 }}>
+                    <span style={{ color: isActive ? "#0000FF" : "#BABAC4", flexShrink: 0 }}>
                       <NavIcon id={item.icon} />
                     </span>
                     {!collapsed && (
@@ -406,7 +406,7 @@ function CollapsibleSidebar() {
                         {item.badge != null && (
                           <span style={{
                             fontSize: 10, fontFamily: F, fontWeight: 700,
-                            background: isActive ? "#1B1BFF" : "rgba(0,0,0,0.10)",
+                            background: isActive ? "#0000FF" : "rgba(0,0,0,0.10)",
                             color: isActive ? "#FFFFFF" : "#5A5A6A",
                             borderRadius: 10, padding: "1px 6px",
                           }}>
@@ -430,7 +430,7 @@ function CollapsibleSidebar() {
           justifyContent: collapsed ? "center" : "flex-start",
           gap: 8, flexShrink: 0,
         }}>
-          <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#1B1BFF", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#0000FF", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
             <span style={{ fontSize: 10, fontFamily: F, fontWeight: 700, color: "#FFFFFF" }}>AB</span>
           </div>
           {!collapsed && (
@@ -497,7 +497,7 @@ function SidebarNav() {
                       border: "none", cursor: "pointer",
                       fontFamily: F, fontSize: 13,
                       fontWeight: isActive ? 700 : 400,
-                      color: isActive ? "#1B1BFF" : isHovered ? "#0A0A0F" : "#5A5A6A",
+                      color: isActive ? "#0000FF" : isHovered ? "#0A0A0F" : "#5A5A6A",
                       background: isActive ? "#E8E8FF" : isHovered ? "#E2E2E6" : "transparent",
                       transition: "background 120ms ease-out, color 120ms ease-out",
                       position: "relative",
@@ -508,17 +508,17 @@ function SidebarNav() {
                       <span style={{
                         position: "absolute", left: 0, top: "20%", bottom: "20%",
                         width: 3, borderRadius: 9999,
-                        background: "#1B1BFF",
+                        background: "#0000FF",
                       }} />
                     )}
-                    <span style={{ color: isActive ? "#1B1BFF" : isHovered ? "#5A5A6A" : "#BABAC4", flexShrink: 0 }}>
+                    <span style={{ color: isActive ? "#0000FF" : isHovered ? "#5A5A6A" : "#BABAC4", flexShrink: 0 }}>
                       <NavIcon id={item.icon} />
                     </span>
                     <span style={{ flex: 1 }}>{item.label}</span>
                     {item.badge != null && (
                       <span style={{
                         fontSize: 10, fontFamily: F, fontWeight: 700,
-                        background: isActive ? "#1B1BFF" : isHovered ? "rgba(0,0,0,0.14)" : "rgba(0,0,0,0.10)",
+                        background: isActive ? "#0000FF" : isHovered ? "rgba(0,0,0,0.14)" : "rgba(0,0,0,0.10)",
                         color: isActive ? "#FFFFFF" : "#5A5A6A",
                         borderRadius: 10, padding: "1px 6px", minWidth: 18, textAlign: "center",
                         transition: "background 120ms ease-out",
@@ -533,7 +533,7 @@ function SidebarNav() {
           ))}
         </nav>
         <div style={{ padding: "12px 16px", borderTop: "1px solid rgba(0,0,0,0.10)", display: "flex", alignItems: "center", gap: 8 }}>
-          <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#1B1BFF", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#0000FF", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
             <span style={{ fontSize: 10, fontFamily: F, fontWeight: 700, color: "#FFFFFF" }}>AB</span>
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
@@ -582,7 +582,7 @@ function StepNav() {
                   style={{
                     width: 32, height: 32, borderRadius: "50%",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    background: done ? "#1B1BFF" : active ? "#1B1BFF" : "#F4F4F6",
+                    background: done ? "#0000FF" : active ? "#0000FF" : "#F4F4F6",
                     border: done ? "none" : active ? "none" : "1.5px solid rgba(0,0,0,0.12)",
                     cursor: "pointer", flexShrink: 0,
                     transition: "background 180ms ease-out",
@@ -607,7 +607,7 @@ function StepNav() {
               {i < steps.length - 1 && (
                 <div style={{
                   flex: 1, height: 2, marginTop: 15, marginLeft: 8, marginRight: 8,
-                  background: done ? "#1B1BFF" : "rgba(0,0,0,0.08)",
+                  background: done ? "#0000FF" : "rgba(0,0,0,0.08)",
                   borderRadius: 9999,
                   transition: "background 300ms ease-out",
                 }} />
@@ -649,7 +649,7 @@ function StepNav() {
           disabled={current === steps.length}
           style={{
             padding: "9px 18px", borderRadius: 6,
-            background: current === steps.length ? "#F4F4F6" : "#1B1BFF",
+            background: current === steps.length ? "#F4F4F6" : "#0000FF",
             color: current === steps.length ? "#BABAC4" : "#FFFFFF",
             fontFamily: F, fontSize: 13, fontWeight: 700,
             border: "none", cursor: current === steps.length ? "not-allowed" : "pointer",
@@ -688,13 +688,13 @@ export function NavigationShowcase() {
             <img src={logoLight} alt="Johnson Luke" style={{ height: 22, width: "auto" }} />
             <div style={{ display: "flex", alignItems: "center", gap: 24, marginLeft: 24 }}>
               {["Work", "Capabilities", "About", "Insights"].map((link) => (
-                <button key={link} style={{ fontFamily: F, fontSize: 14, fontWeight: 400, color: link === "Work" ? "#1B1BFF" : "#5A5A6A", background: "none", border: "none", cursor: "pointer" }}>
+                <button key={link} style={{ fontFamily: F, fontSize: 14, fontWeight: 400, color: link === "Work" ? "#0000FF" : "#5A5A6A", background: "none", border: "none", cursor: "pointer" }}>
                   {link}
                 </button>
               ))}
             </div>
             <div style={{ marginLeft: "auto" }}>
-              <button style={{ fontFamily: F, fontSize: 14, fontWeight: 700, padding: "9px 18px", borderRadius: 6, border: "none", background: "#1B1BFF", color: "#FFFFFF", cursor: "pointer" }}>
+              <button style={{ fontFamily: F, fontSize: 14, fontWeight: 700, padding: "9px 18px", borderRadius: 6, border: "none", background: "#0000FF", color: "#FFFFFF", cursor: "pointer" }}>
                 Schedule a call
               </button>
             </div>

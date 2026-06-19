@@ -62,13 +62,13 @@ function AccordionSingle({ items }: { items: AccordionItem[] }) {
                 fontFamily: F,
                 fontSize: 14,
                 fontWeight: isOpen ? 700 : 400,
-                color: isOpen ? "#1B1BFF" : "#0A0A0F",
+                color: isOpen ? "#0000FF" : "#0A0A0F",
                 textAlign: "left",
                 transition: "color 180ms ease-out",
               }}
             >
               {item.question}
-              <span style={{ color: isOpen ? "#1B1BFF" : "#BABAC4" }}>
+              <span style={{ color: isOpen ? "#0000FF" : "#BABAC4" }}>
                 <ChevronDown open={isOpen} />
               </span>
             </button>
@@ -135,13 +135,13 @@ function AccordionMulti({ items }: { items: AccordionItem[] }) {
                 fontFamily: F,
                 fontSize: 14,
                 fontWeight: isOpen ? 700 : 400,
-                color: isOpen ? "#1B1BFF" : "#0A0A0F",
+                color: isOpen ? "#0000FF" : "#0A0A0F",
                 textAlign: "left",
                 transition: "color 180ms ease-out",
               }}
             >
               {item.question}
-              <span style={{ color: isOpen ? "#1B1BFF" : "#BABAC4" }}>
+              <span style={{ color: isOpen ? "#0000FF" : "#BABAC4" }}>
                 <ChevronDown open={isOpen} />
               </span>
             </button>
@@ -183,7 +183,7 @@ function AccordionCard({ items }: { items: AccordionItem[] }) {
             key={item.id}
             style={{
               borderRadius: 8,
-              border: `1px solid ${isOpen ? "#1B1BFF" : "rgba(0,0,0,0.10)"}`,
+              border: `1px solid ${isOpen ? "#0000FF" : "rgba(0,0,0,0.10)"}`,
               background: isOpen ? "#FAFAFF" : "#FFFFFF",
               overflow: "hidden",
               transition: "border-color 180ms ease-out, background 180ms ease-out",
@@ -204,13 +204,13 @@ function AccordionCard({ items }: { items: AccordionItem[] }) {
                 fontFamily: F,
                 fontSize: 13,
                 fontWeight: isOpen ? 700 : 400,
-                color: isOpen ? "#1B1BFF" : "#0A0A0F",
+                color: isOpen ? "#0000FF" : "#0A0A0F",
                 textAlign: "left",
                 transition: "color 180ms ease-out",
               }}
             >
               {item.question}
-              <span style={{ color: isOpen ? "#1B1BFF" : "#BABAC4" }}>
+              <span style={{ color: isOpen ? "#0000FF" : "#BABAC4" }}>
                 <ChevronDown open={isOpen} />
               </span>
             </button>
@@ -298,13 +298,13 @@ function AccordionWithIcon({ items }: { items: (AccordionItem & { icon: string }
                   fontFamily: F,
                   fontSize: 14,
                   fontWeight: isOpen ? 700 : 400,
-                  color: isOpen ? "#1B1BFF" : "#0A0A0F",
+                  color: isOpen ? "#0000FF" : "#0A0A0F",
                   transition: "color 180ms ease-out",
                 }}
               >
                 {item.question}
               </span>
-              <span style={{ color: isOpen ? "#1B1BFF" : "#BABAC4" }}>
+              <span style={{ color: isOpen ? "#0000FF" : "#BABAC4" }}>
                 <ChevronDown open={isOpen} />
               </span>
             </button>
