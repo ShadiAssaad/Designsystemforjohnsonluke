@@ -1,61 +1,32 @@
-**Add your own guidelines here**
-<!--
+# Johnson Luke Design System v1.0 — generation rules
 
-System Guidelines
+Extend only. Never redesign, restyle, rename or remove existing sections.
 
-Use this file to provide the AI with rules and guidelines you want it to follow.
-This template outlines a few examples of things you can add. You can add your own sections and format it to suit your needs
+## Conventions
+- Each section is its own file `src/app/components/XxxShowcase.tsx` exporting `XxxShowcase`, registered in `src/app/App.tsx` (import, render with matching section `id`, add to `navItems` in a logical position).
+- Style with inline styles and `const F = "'Rethink Sans', sans-serif"`. Use Radix primitives where interaction needs it. Do not import from `src/app/components/ui/`.
+- Section header: Label eyebrow + Heading M title + one-line Body S description.
+- Show every state, labelled: default, hover, focus, active/selected, disabled, error where relevant. Keyboard focus ring = 2px #1B1BFF.
+- Example content fits a strategy & design consultancy (projects, phases, clients, briefs). No lorem ipsum.
 
-TIP: More context isn't always better. It can confuse the LLM. Try and add the most important rules you need
+## Tokens
+- Colours: Electric Blue #1B1BFF, Blue tint #EEEEFF, Neon Green #01FF97 (decoration only, never text), Green text #00A864, Near Black #0A0A0F, Off White #F4F4F6, White #FFFFFF, text-secondary #5A5A6A, text-disabled #BABAC4, text-secondary-dark #8A8A9A.
+- Borders: default rgba(0,0,0,0.10), strong rgba(0,0,0,0.20), inverse rgba(255,255,255,0.12), focus #1B1BFF.
+- Status: success #00A864 / bg #EEFAF4; warning #D97706 / bg #FEF3CD; danger #DC2626 / bg #FEE8E8; info #1B1BFF / bg #EEEEFF.
+- Type: Rethink Sans 400/700 only. Display 72, Heading L 40, Heading M 28, Heading S 20, Body L 18, Body 16, Body S 14, Label 12 (400, +0.08em, ALL CAPS), Metric 40.
+- Spacing (4px base): 4, 8, 12, 16, 24, 32, 48, 64, 96.
+- Radius: 6 small components, 10 cards/panels, 16 modals/sheets, 9999 pills only (sparingly). Never 0, never 24+.
+- Shadows: xs `0 1px 2px rgba(0,0,0,0.05)`; sm `0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05)`; md `0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06)`; lg `0 8px 24px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.08)`. On dark surfaces use a rgba(255,255,255,0.10) border instead of a shadow.
+- Motion: popovers/tooltips 140ms ease-out, tab/section change 180ms ease-out, modal 220ms ease-out (scale 0.97→1 + fade), panels/sheets 280ms ease-in-out. No springs, no bounce, no loops (spinner rotation is the only exception).
+- Contrast: everything passes WCAG AA. Never blue text on near-black, never near-black text on blue, never #01FF97 as text. No gradients on UI components. No border accents on cards or toasts.
+- Logos: `src/imports/Artboard_1_300x.png` on light surfaces, `Artboard_5_300x.png` on dark.
 
-# General guidelines
-
-Any general rules you want the AI to follow.
-For example:
-
-* Only use absolute positioning when necessary. Opt for responsive and well structured layouts that use flexbox and grid by default
-* Refactor code as you go to keep code clean
-* Keep file sizes small and put helper functions and components in their own files.
-
---------------
-
-# Design system guidelines
-Rules for how the AI should make generations look like your company's design system
-
-Additionally, if you select a design system to use in the prompt box, you can reference
-your design system's components, tokens, variables and components.
-For example:
-
-* Use a base font-size of 14px
-* Date formats should always be in the format “Jun 10”
-* The bottom toolbar should only ever have a maximum of 4 items
-* Never use the floating action button with the bottom toolbar
-* Chips should always come in sets of 3 or more
-* Don't use a dropdown if there are 2 or fewer options
-
-You can also create sub sections and add more specific details
-For example:
-
-
-## Button
-The Button component is a fundamental interactive element in our design system, designed to trigger actions or navigate
-users through the application. It provides visual feedback and clear affordances to enhance user experience.
-
-### Usage
-Buttons should be used for important actions that users need to take, such as form submissions, confirming choices,
-or initiating processes. They communicate interactivity and should have clear, action-oriented labels.
-
-### Variants
-* Primary Button
-  * Purpose : Used for the main action in a section or page
-  * Visual Style : Bold, filled with the primary brand color
-  * Usage : One primary button per section to guide users toward the most important action
-* Secondary Button
-  * Purpose : Used for alternative or supporting actions
-  * Visual Style : Outlined with the primary color, transparent background
-  * Usage : Can appear alongside a primary button for less important actions
-* Tertiary Button
-  * Purpose : Used for the least important actions
-  * Visual Style : Text-only with no border, using primary color
-  * Usage : For actions that should be available but not emphasized
--->
+## Rule builder
+Rules read WHEN [trigger] IF [conditions] THEN [actions]. Example: "When a project moves to Review, if budget used > 80% and client is Tier 1, notify the account lead and flag as At risk."
+- Shared blocks live in `src/app/components/rules/` (import from `rules/index.ts`); showcases and the full editor page reuse them. Never restyle them per page.
+- WHEN: `TriggerSelector`, one per rule. Card-style select grouped by category; selected shows a blue-tint pill. Use for the event or schedule only, never for filtering.
+- IF: `ConditionGroup` of `ConditionRow`s, each built from `FieldPicker` + `OperatorPicker` (options depend on field type) + `ValueInput` (hidden when the operator needs no value). `Connector` toggles AND/OR for the whole group. Nest groups at most 3 levels; the add-group control is disabled with a tooltip at max depth. Conditions are optional.
+- THEN: `ActionRow` list (at least one), reorderable, with optional delay. Use `TokenField` chips like `{project.name}` for dynamic text.
+- `RuleComposer` assembles all three; `summarizeRule` renders the live plain-language sentence (incomplete parts as grey placeholders) and `validateRule` returns errors that `focusRuleNode(id)` can scroll to and focus.
+- Row states: incomplete (dashed border + "Choose a field"), complete, invalid (red border + inline error under the row), disabled. Add/remove rows animate 180ms (height + fade), menus 140ms, panels 280ms.
+- Page patterns: editor (header, WHEN → IF → THEN canvas, settings panel, validation summary, test slideout, conflict warning, Visual/JSON toggle) and management (list table, rule cards, templates modal, run history, version history, empty/loading/permission states). Destructive actions need confirmation; deleting a rule requires typing its name.

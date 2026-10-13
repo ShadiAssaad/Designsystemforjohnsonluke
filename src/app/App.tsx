@@ -14,7 +14,6 @@ import { AvatarShowcase } from "./components/AvatarShowcase";
 import { NavigationShowcase } from "./components/NavigationShowcase";
 import { ToastShowcase } from "./components/ToastShowcase";
 import { MotionShowcase } from "./components/MotionShowcase";
-import { PatternShowcase } from "./components/PatternShowcase";
 import { CheckboxShowcase } from "./components/CheckboxShowcase";
 import { ToggleShowcase } from "./components/ToggleShowcase";
 import { DropdownShowcase } from "./components/DropdownShowcase";
@@ -29,36 +28,117 @@ import { PaginationBreadcrumbShowcase } from "./components/PaginationBreadcrumbS
 import { SlideoutShowcase } from "./components/SlideoutShowcase";
 import { NotificationShowcase } from "./components/NotificationShowcase";
 import { AccordionShowcase } from "./components/AccordionShowcase";
+import { RuleBlocksShowcase } from "./components/RuleBlocksShowcase";
+import { RuleEditorShowcase } from "./components/RuleEditorShowcase";
+import { RulesManagementShowcase } from "./components/RulesManagementShowcase";
+import { DiagramShowcase } from "./components/DiagramShowcase";
+import { ElevationShowcase } from "./components/ElevationShowcase";
+import { GridShowcase } from "./components/GridShowcase";
+import { IconographyShowcase } from "./components/IconographyShowcase";
+import { PhotographyShowcase } from "./components/PhotographyShowcase";
+import { LogoUsageShowcase } from "./components/LogoUsageShowcase";
+import { SearchShowcase } from "./components/SearchShowcase";
+import { ComboboxShowcase } from "./components/ComboboxShowcase";
+import { TagInputShowcase } from "./components/TagInputShowcase";
+import { PasswordShowcase } from "./components/PasswordShowcase";
+import { NumberInputShowcase } from "./components/NumberInputShowcase";
+import { OtpShowcase } from "./components/OtpShowcase";
+import { FormPatternShowcase } from "./components/FormPatternShowcase";
+import { RadioShowcase } from "./components/RadioShowcase";
+import { SegmentedControlShowcase } from "./components/SegmentedControlShowcase";
+import { PopoverShowcase } from "./components/PopoverShowcase";
+import { HoverCardShowcase } from "./components/HoverCardShowcase";
+import { ContextMenuShowcase } from "./components/ContextMenuShowcase";
+import { CommandPaletteShowcase } from "./components/CommandPaletteShowcase";
+import { BottomSheetShowcase } from "./components/BottomSheetShowcase";
+import { StepperShowcase } from "./components/StepperShowcase";
+import { AnchorNavShowcase } from "./components/AnchorNavShowcase";
+import { LinkShowcase } from "./components/LinkShowcase";
+import { FooterShowcase } from "./components/FooterShowcase";
+import { AlertShowcase } from "./components/AlertShowcase";
+import { SpinnerShowcase } from "./components/SpinnerShowcase";
+import { SkeletonShowcase } from "./components/SkeletonShowcase";
+import { EmptyStateShowcase } from "./components/EmptyStateShowcase";
+import { ErrorPageShowcase } from "./components/ErrorPageShowcase";
+import { ChartShowcase } from "./components/ChartShowcase";
+import { ListShowcase } from "./components/ListShowcase";
+import { TimelineShowcase } from "./components/TimelineShowcase";
+import { ChipShowcase } from "./components/ChipShowcase";
+import { CalendarShowcase } from "./components/CalendarShowcase";
+import { DescriptionListShowcase } from "./components/DescriptionListShowcase";
+import { CarouselShowcase } from "./components/CarouselShowcase";
+import { DividerShowcase } from "./components/DividerShowcase";
+import { KbdShowcase } from "./components/KbdShowcase";
 
-const navItems = [
+const navItems: { id: string; label: string; heading?: string }[] = [
   { id: "brand", label: "Brand" },
   { id: "color", label: "Color" },
   { id: "typography", label: "Typography" },
   { id: "spacing", label: "Spacing & Radius" },
+  { id: "elevation", label: "Elevation" },
+  { id: "grid", label: "Grid & Layout" },
+  { id: "iconography", label: "Iconography" },
+  { id: "photography", label: "Photography" },
+  { id: "logousage", label: "Logo Usage" },
   { id: "navigation", label: "Navigation" },
   { id: "buttons", label: "Buttons" },
   { id: "inputs", label: "Inputs" },
+  { id: "search", label: "Search" },
+  { id: "combobox", label: "Combobox" },
+  { id: "taginput", label: "Tag Input" },
+  { id: "password", label: "Password" },
+  { id: "numberinput", label: "Number Input" },
+  { id: "otp", label: "Verification Code" },
+  { id: "formpattern", label: "Form Pattern" },
   { id: "checkboxes", label: "Checkboxes" },
+  { id: "radios", label: "Radio Group" },
   { id: "toggles", label: "Toggles" },
+  { id: "segmented", label: "Segmented Control" },
   { id: "dropdowns", label: "Dropdowns" },
   { id: "tooltips", label: "Tooltips" },
   { id: "progress", label: "Progress" },
   { id: "sliders", label: "Sliders" },
   { id: "modals", label: "Modals" },
+  { id: "popovers", label: "Popover" },
+  { id: "hovercards", label: "Hover Card" },
+  { id: "contextmenu", label: "Context Menu" },
+  { id: "commandpalette", label: "Command Palette" },
+  { id: "bottomsheet", label: "Bottom Sheet" },
   { id: "fileinput", label: "Date & File" },
   { id: "tabs", label: "Tabs" },
   { id: "tables", label: "Tables" },
   { id: "pagination", label: "Pagination" },
+  { id: "steppers", label: "Stepper" },
+  { id: "anchornav", label: "Anchor Nav" },
+  { id: "links", label: "Links" },
+  { id: "footers", label: "Footer" },
   { id: "slideout", label: "Slideout Panels" },
   { id: "notifications", label: "Notifications" },
+  { id: "alerts", label: "Alerts" },
+  { id: "spinners", label: "Spinners" },
+  { id: "skeletons", label: "Skeletons" },
+  { id: "emptystates", label: "Empty States" },
+  { id: "errorpages", label: "Error Pages" },
   { id: "accordion", label: "Accordion" },
   { id: "cards", label: "Cards" },
   { id: "badges", label: "Badges" },
   { id: "metrics", label: "Metrics" },
+  { id: "diagrams", label: "Diagrams" },
+  { id: "charts", label: "Charts" },
+  { id: "lists", label: "Lists" },
+  { id: "timeline", label: "Timeline" },
+  { id: "chips", label: "Filter Chips" },
+  { id: "calendar", label: "Calendar" },
+  { id: "descriptionlist", label: "Description List" },
+  { id: "carousel", label: "Carousel" },
+  { id: "dividers", label: "Dividers" },
+  { id: "kbd", label: "Keyboard Shortcuts" },
   { id: "avatars", label: "Avatars" },
   { id: "toasts", label: "Toasts" },
+  { id: "ruleblocks", label: "Rule Blocks", heading: "Rule builder" },
+  { id: "ruleeditor", label: "Rule Editor" },
+  { id: "rulesmanagement", label: "Rules Management" },
   { id: "motion", label: "Motion" },
-  { id: "patterns", label: "Patterns" },
 ];
 
 export default function App() {
@@ -155,8 +235,8 @@ export default function App() {
               "checkboxes",
               "tabs",
               "accordion",
+              "ruleblocks",
               "motion",
-              "patterns",
             ].includes(item.id);
 
             return (
@@ -169,6 +249,20 @@ export default function App() {
                       margin: "8px 8px",
                     }}
                   />
+                )}
+                {item.heading && (
+                  <p
+                    style={{
+                      fontSize: 11,
+                      fontWeight: 400,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      color: "#5A5A6A",
+                      padding: "4px 12px 6px",
+                    }}
+                  >
+                    {item.heading}
+                  </p>
                 )}
                 <button
                   onClick={() => scrollTo(item.id)}
@@ -372,30 +466,70 @@ export default function App() {
             <ColorTokens />
             <TypographyScale />
             <SpacingTokens />
+            <ElevationShowcase />
+            <GridShowcase />
+            <IconographyShowcase />
+            <PhotographyShowcase />
+            <LogoUsageShowcase />
             <NavigationShowcase />
             <ButtonShowcase />
             <InputShowcase />
+            <SearchShowcase />
+            <ComboboxShowcase />
+            <TagInputShowcase />
+            <PasswordShowcase />
+            <NumberInputShowcase />
+            <OtpShowcase />
+            <FormPatternShowcase />
             <CheckboxShowcase />
+            <RadioShowcase />
             <ToggleShowcase />
+            <SegmentedControlShowcase />
             <DropdownShowcase />
             <TooltipShowcase />
             <ProgressShowcase />
             <SliderShowcase />
             <ModalShowcase />
+            <PopoverShowcase />
+            <HoverCardShowcase />
+            <ContextMenuShowcase />
+            <CommandPaletteShowcase />
+            <BottomSheetShowcase />
             <FileInputShowcase />
             <TabsShowcase />
             <TableShowcase />
             <PaginationBreadcrumbShowcase />
+            <StepperShowcase />
+            <AnchorNavShowcase />
+            <LinkShowcase />
+            <FooterShowcase />
             <SlideoutShowcase />
             <NotificationShowcase />
+            <AlertShowcase />
+            <SpinnerShowcase />
+            <SkeletonShowcase />
+            <EmptyStateShowcase />
+            <ErrorPageShowcase />
             <AccordionShowcase />
             <CardShowcase />
             <BadgeShowcase />
             <MetricShowcase />
+            <DiagramShowcase />
+            <ChartShowcase />
+            <ListShowcase />
+            <TimelineShowcase />
+            <ChipShowcase />
+            <CalendarShowcase />
+            <DescriptionListShowcase />
+            <CarouselShowcase />
+            <DividerShowcase />
+            <KbdShowcase />
             <AvatarShowcase />
             <ToastShowcase />
+            <RuleBlocksShowcase />
+            <RuleEditorShowcase />
+            <RulesManagementShowcase />
             <MotionShowcase />
-            <PatternShowcase />
 
             {/* Exclusions section */}
             <section id="exclusions" className="mb-16" style={{ position: "relative" }}>
