@@ -1,0 +1,10 @@
+{
+  "description": "Centralize and manage design tokens, components, and styles to create a consistent, scalable design system tailored for Johnson Luke's brand.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
